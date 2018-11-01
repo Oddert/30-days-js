@@ -25,6 +25,7 @@ const chars = {
 function handleClick (letter) {
   playAudio (letter)
   flashButton (letter)
+  flashHalo (letter)
 }
 
 function flashButton (letter) {
@@ -33,6 +34,14 @@ function flashButton (letter) {
   setTimeout(() => {
     button.classList.remove('active')
   }, 200)
+}
+
+function flashHalo (letter) {
+  let halo = document.getElementById(`halo-${letter}`)
+  halo.classList.add('anim')
+  setTimeout(() => {
+    halo.classList.remove('anim')
+  }, 210)
 }
 
 function playAudio (letter) {
@@ -74,8 +83,8 @@ function handleKeyPress (e) {
   }
 }
 
-function listenToKey () {
+function addKeyListeners () {
   document.addEventListener('keydown', handleKeyPress)
 }
 
-document.addEventListener('DOMContentLoaded', listenToKey)
+document.addEventListener('DOMContentLoaded', addKeyListeners)
