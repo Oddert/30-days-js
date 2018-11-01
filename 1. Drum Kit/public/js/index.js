@@ -22,16 +22,24 @@ const chars = {
   c: 67
 }
 
+// ========== Above code functionless, for dev reference only ==========
+
+var showHalo = true
+
 function toggleGrid () {
   let elem = document.getElementById('key-container')
   if (elem.classList.contains('grid')) elem.classList.remove('grid')
   else elem.classList.add('grid')
 }
 
+function toggleHalo () {
+  showHalo = !showHalo
+}
+
 function handleClick (letter) {
   playAudio (letter)
   flashButton (letter)
-  flashHalo (letter)
+  if (showHalo) flashHalo (letter)
 }
 
 function flashButton (letter) {
@@ -52,6 +60,7 @@ function flashHalo (letter) {
 
 function playAudio (letter) {
   let audio = document.getElementById(letter)
+  audio.currentTime = 0
   audio.play()
 }
 
