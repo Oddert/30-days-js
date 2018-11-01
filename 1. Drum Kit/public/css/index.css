@@ -16,6 +16,12 @@ body {
   background-size: cover;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 h1, p {
   color: tomato;
   text-shadow: 0px 0px 5px #bec3c7;
@@ -55,11 +61,13 @@ p {
 
 .button:hover {
   border: 1px solid #778088;
+  background: #ecf0f1;
 }
 
 .active {
   border: 2px solid #f1c40f;
   outline: none;
+  background: #bec3c7;
 }
 
 .halo {
@@ -68,7 +76,7 @@ p {
   left: 0;
   width: 49px;
   height: 49px;
-  border: 1px solid red;
+  border: 1px solid rgba(232,76,61,.7);
   border-radius: 50%;
   opacity: 0;
 }
@@ -78,6 +86,13 @@ p {
   animation-duration: .2s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
+}
+
+#key-container.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 5px;
 }
 
 @keyframes burst {

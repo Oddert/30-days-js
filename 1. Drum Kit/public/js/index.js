@@ -22,6 +22,12 @@ const chars = {
   c: 67
 }
 
+function toggleGrid () {
+  let elem = document.getElementById('key-container')
+  if (elem.classList.contains('grid')) elem.classList.remove('grid')
+  else elem.classList.add('grid')
+}
+
 function handleClick (letter) {
   playAudio (letter)
   flashButton (letter)
