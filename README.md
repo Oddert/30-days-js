@@ -1,5 +1,4 @@
 # The Javascript 30 Challenge | A Commitment by Oddert
-====================================================
 
 ## The Challenge
 [The 30 days Javascript challenge](https://javascript30.com/) ([repository](https://github.com/wesbos/JavaScript30)) is a challenge / video course set out by [Wes Bos](https://wesbos.com/)
@@ -10,4 +9,7 @@ I'll try to do one a day but will bunch up some where necessary to keep roughly 
 I'll stick to the strict rules outlined bellow and set up a blog soon to document all this.
 
 ## Rules
-* No frameworks, only use lirbraries if it would be nonsensical to not do so
+* No frameworks
+* Only use libraries if it would be nonsensical to not do so
+* No Compilers
+* Complete One challenge a day (flexible because of life)
