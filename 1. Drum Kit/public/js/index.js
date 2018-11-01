@@ -10,8 +10,19 @@ const audio = [
   {src: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3', letter: 'C', color: '#c1392b', clickColor: '#a01709', active: false}
 ]
 
+const chars = {
+  q: 81,
+  w: 87,
+  e: 69,
+  a: 65,
+  s: 83,
+  d: 68,
+  z: 90,
+  x: 88,
+  c: 67
+}
+
 function handleClick (letter) {
-  console.log(letter)
   playAudio (letter)
   flashButton (letter)
 }
@@ -28,3 +39,43 @@ function playAudio (letter) {
   let audio = document.getElementById(letter)
   audio.play()
 }
+
+function handleKeyPress (e) {
+  switch (e.keyCode) {
+    case 81:
+      handleClick ('Q')
+      break;
+    case 87:
+      handleClick ('W')
+      break;
+    case 69:
+      handleClick ('E')
+      break;
+    case 65:
+      handleClick ('A')
+      break;
+    case 83:
+      handleClick ('S')
+      break;
+    case 68:
+      handleClick ('D')
+      break;
+    case 90:
+      handleClick ('Z')
+      break;
+    case 88:
+      handleClick ('X')
+      break;
+    case 67:
+      handleClick ('C')
+      break;
+    default:
+      break;
+  }
+}
+
+function listenToKey () {
+  document.addEventListener('keydown', handleKeyPress)
+}
+
+document.addEventListener('DOMContentLoaded', listenToKey)
