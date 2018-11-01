@@ -22,9 +22,9 @@ header {
   left: 0;
 }
 
-h1, p {
+h1, p, p a {
   color: tomato;
-  text-shadow: 0px 0px 5px #bec3c7;
+  text-shadow: 0px 0px 8px #2d3e50;
   text-align: center;
   margin: 0px 0px 20px 0px;
 }
@@ -52,11 +52,13 @@ p {
 
 .button {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border-radius:  4px;
   border: 1px solid #bec3c7;
   background: #fff;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .button:hover {
@@ -74,8 +76,8 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 49px;
-  height: 49px;
+  width: 75px;
+  height: 75px;
   border: 1px solid rgba(232,76,61,.7);
   border-radius: 50%;
   opacity: 0;
