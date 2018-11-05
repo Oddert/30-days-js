@@ -1,8 +1,95 @@
 
 * {
   font-family: helvetica, arial, 'sans serif', 'open sans';
+  text-align: center;
 }
 
 h1 {
   color: tomato;
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  flex: 1;
+  /* border: 1px dashed tomato; */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    font-size .7s cubic-bezier(.61, -.19, .7, -.11),
+    flex .7s cubic-bezier(.61, -.19, .7, -.11),
+    background .2s;
+}
+
+.flex *:nth-child(2) {
+  font-size: 1.5em;
+}
+
+.flex * {
+  font-weight: 700;
+  color: #ecf0f1;
+  text-shadow: 0px 0px 10px rgba(0,0,0,1);
+  transition: .5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex > *:first-child {
+  transform: translateY(-100%);
+}
+.flex.active > *:first-child {
+  transform: translateY(0%);
+}
+.flex > *:last-child {
+  transform: translateY(100%);
+}
+.flex.active > *:last-child {
+  transform: translateY(0%);
+}
+
+
+.flex.open {
+  flex: 5;
+  font-size: 40px;
+}
+
+
+.flex:nth-child(1) {
+  background-image: url('http://4.bp.blogspot.com/-yOZrow0dcZQ/UWQYJuLmepI/AAAAAAAAS_k/iRjOk7VT_Fk/s1600/scottish_highlands-1080.jpg');
+}
+.flex:nth-child(2) {
+  background-image: url('https://www.travelcaffeine.com/wp-content/uploads/2016/11/griffith-observatory-los-angeles-skyline-low-dawn-blue-bricker.jpg');
+}
+.flex:nth-child(3) {
+  background-image: url('https://www.fasken.com/-/media/a32d31a624674a57b397950a49aa64ac.ashx');
+}
+.flex:nth-child(4) {
+  background-image: url('https://cimg.visitscotland.com/cms-images/destinations/attractions/funicular-railway-cairngorm-mountain-snow');
+}
+.flex:nth-child(5) {
+  background-image: url('https://d1vpzb8ccuu79x.cloudfront.net/wp-content/uploads/TfL-DLR-train-image.jpg');
 }
