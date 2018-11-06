@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1) Filter the list of inventors for those who were born in the 1500's
   let one = inventors.filter(each => each.year >= 1500 && each.year < 1600)
   postAnswers('one', JSON.stringify(one))
-  // console.table(one)
+  console.table(one)
 
   // 2) Give us an array of the inventors first and last names
   let two = inventors.map(each => ({
@@ -40,10 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     last: each.last
   }))
   postAnswers('two', JSON.stringify(two))
+  console.table(two)
 
   // 3) Sort the inventors by birthdate, oldest to youngest
   let three = inventors.sort((a, b) => a.year < b.year ? 1 : -1)
   postAnswers('three', JSON.stringify(three))
+  console.table(three)
 
   // 4) How many years did all the invenotrs live?
   let four = inventors.map(each =>
@@ -52,19 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   )
   postAnswers('four', JSON.stringify(four))
+  console.table(four)
 
   // 5) Sort the inventors by years lived
   let five = inventors.sort((a, b) => a.passed - a.year > b.passed - b.year ? 1 : -1)
   postAnswers('five', JSON.stringify(five))
+  console.table(five)
 
   // 6) Create a list of boulevards in Paris that contain the 'de' anywhere in the name
-  // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+  const sixUrl = 'https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris'
 
   function passThisIntoTheWikipediaPage () {
     const category = document.querySelector('.mw-category')
     const links = [...category.querySelectorAll('a')]
     const de = links.map(each => each.textContent).filter(each => each.includes('de'))
   }
+  console.log('Challenge 6, pass this function into the following wikipedia page')
+  console.log(sixUrl)
+  console.log(passThisIntoTheWikipediaPage)
 
 
   // 7) Sort the people alphabetically by last name
@@ -76,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       a[0] > b[0] ? 1 : -1
     )
   postAnswers('seven', JSON.stringify(seven))
+  console.table(seven)
 
   // 8) Talley up the instancs of these
   const data = ['tube', 'tube', 'overground', 'overground', 'bike', 'walk', 'tube', 'DLR', 'bike', 'walk', 'tube', 'DLR', 'tube', 'overground']
@@ -85,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return acc
   }, {})
   postAnswers('eight', JSON.stringify(eight))
+  console.table(eight)
 
 
 
