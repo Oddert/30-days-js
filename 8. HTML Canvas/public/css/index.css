@@ -12,3 +12,9 @@ body, html {
 h1 {
   color: tomato;
 }
+
+.canvas-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
