@@ -39,3 +39,50 @@ canvas.addEventListener('mousedown', e => {
   lastY = e.offsetY
 })
 canvas.addEventListener('mouseup', () => isDrawing = false)
+
+
+
+
+const test = {
+  altKey: false,
+  bubbles: true,
+  button: 0,
+  buttons: 1,
+  cancelBubble: false,
+  cancelable: true,
+  clientX: 489,
+  clientY: 306,
+  composed: true,
+  ctrlKey: false,
+  currentTarget: null,
+  defaultPrevented: false,
+  detail: 0,
+  eventPhase: 0,
+  fromElement: null,
+  isTrusted: true,
+  layerX: 489,
+  layerY: 306,
+  metaKey: false,
+  movementX: 130,
+  movementY: 30,
+  offsetX: 490,
+  offsetY: 307,
+  pageX: 489,
+  pageY: 306,
+  // path: (6) [canvas#draw, div.canvas-flex, body, html, document, Window],
+  relatedTarget: null,
+  returnValue: true,
+  screenX: 489,
+  screenY: 377,
+  shiftKey: false,
+  // sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: false},
+  // srcElement: canvas#draw,
+  // target: canvas#draw,
+  timeStamp: 8309.899999992922,
+  // toElement: canvas#draw,
+  type: "mousemove",
+  // view: Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …},
+  which: 1,
+  x: 489,
+  y: 306,
+}
