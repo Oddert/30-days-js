@@ -3,10 +3,89 @@
   <head>
     <meta charset="utf-8">
     <title>Oddert 30 Days of Javascript</title>
-    <script type="text/javascript" src='/js/index.js'></script>
     <link rel="stylesheet" href="/css/index.css">
   </head>
   <body>
-    <p onClick='handleClick()'>Break Down</p>
+    <p onClick='handleClick()'>Click me</p>
+    <div class="display-code">
+      <span class='decl'>const</span> dogs <span class='opp'>=</span> [
+        { <span class='attr'>name</span>: <span class='str'>'Rusty'</span>, <span class='attr'>age</span>: <span class='num'>2</span> },
+        { <span class='attr'>name</span>: <span class='str'>'Hugo'</span>, <span class='attr'>age</span>: <span class='num'>8</span> }
+      ]
+
+      <span class='decl'>function</span> <span class='exec'>handleClick</span> () {
+        <span class='decl'>const</span> elem <span class='opp'>=</span> <span class='attr'>document</span>.<span class='exec'>querySelector</span>(<span class='str'>'p'</span>)
+        elem.<span class='attr'>style</span>.<span class='attr'>color</span> <span class='opp'>=</span> <span class='str'>'#BADA55'</span>
+        elem.<span class='attr'>style</span>.<span class='attr'>fontSize</span> <span class='opp'>=</span> <span class='str'>'50px'</span>
+      }
+
+
+      <span class='com'>// Regular</span>
+      console.<span class='exec'>log</span>(<span class='str'>'Hello'</span>)
+
+      <span class='com'>//Interpolated</span>
+      console.<span class='exec'>log</span>(<span class='str'>'Hello I am a %s string!'</span>, <span class='str'>'fancy'</span>)
+      console.<span class='exec'>log</span>(<span class='str'>`Thats just the poor mans string partial says</span> <span class='curly'>${</span><span class='maths'>Math</span>.<span class='exec'>floor</span>(<span class='maths'>Math</span>.<span class='exec'>random</span>()<span class='exec'><span class='opp'>*</span></span><span class='num'>1000</span>)<span class='attr'>}</span> <span class='str'>people`</span>)
+
+
+      <span class='com'>//Styled</span>
+      console.<span class='exec'>log</span>(<span class='str'>'%c No one is as fancy as I'</span>, <span class='str'>'text-transform: uppercase; font-size: 1.4em; color: teal;'</span>)
+
+      <span class='com'>// Warning</span>
+      console.<span class='exec'>warn</span>(<span class='str'>'lol its just like being shouted at cuase I annoyed creat-react-app'</span>)
+
+      <span class='com'>// Error</span>
+      console.<span class='exec'>error</span>(<span class='str'>'create-react-app now on it<span class='opp'>\</span>'s way to your flat now to kick ur ass'</span>)
+
+      <span class='com'>// Info</span>
+      console.<span class='exec'>info</span>(<span class='str'>'Did u know that automobiles are tawdery hold overs from the early 20th centruy'</span>)
+
+      <span class='com'>// Testing</span>
+      console.<span class='exec'>assert</span>(<span class='str'>'oddert' <span class='opp'>===</span> 'is awake', 'As it turns out "oddert" !== "is awake"'</span>)
+
+      <span class='com'>// Clearing</span>
+      <span class='com'>// console.clear()</span>
+
+      <span class='com'>// Viewing DOM Elems</span>
+      <span class='decl'>const</span> elem <span class='opp'>=</span> <span class='attr'>document</span>.<span class='exec'>querySelector</span>(<span class='str'>'p'</span>)
+      console.<span class='exec'>log</span>(elem)
+      console.<span class='exec'>dir</span>(elem)
+
+      <span class='com'>// Grouping logs</span>
+      dogs.<span class='exec'>forEach</span>(each <span class='decl'>=></span> {
+        console.<span class='exec'>group</span>(<span class='str'>`</span><span class='curly'>${</span>each.<span class='attr'>name</span><span class='curly'>}</span><span class='str'>`</span>)
+        console.<span class='exec'>log</span>(<span class='str'>`The first dug is </span><span class='curly'>${</span>each.<span class='attr'>name</span><span class='curly'>}</span><span class='str'>`</span>)
+        console.<span class='exec'>log</span>(<span class='str'>`</span><span class='curly'>${</span>each.<span class='attr'>name</span><span class='curly'>}</span> <span class='str'>is</span> <span class='curly'>${</span>each.<span class='attr'>age</span><span class='curly'>}</span><span class='str'> old`</span>)
+        console.<span class='exec'>log</span>(<span class='str'>`which means they are </span><span class='curly'>${</span>each.<span class='attr'>age</span> * <span class='num'>7</span><span class='curly'>}</span><span class='str'> in dug years`</span>)
+        console.<span class='exec'>groupEnd</span>(<span class='str'>`</span><span class='curly'>${</span>each.<span class='attr'>name</span><span class='curly'>}</span><span class='str'>`</span>)
+      })
+
+      <span class='com'>// Count</span>
+      console.<span class='exec'>count</span>(<span class='str'>'Scott'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Scott'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Scott'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Jim'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Scott'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Jim'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Jim'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Scott'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Jim'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Scott'</span>)
+      console.<span class='exec'>count</span>(<span class='str'>'Jim'</span>)
+
+
+      <span class='com'>// Timing</span>
+      console.<span class='exec'>time</span>(<span class='str'>'fetching data...'</span>)
+      <span class='exec'>fetch</span>(<span class='str'>'https://api.github.com/users/Oddert'</span>)
+      .<span class='exec'>then</span>(res <span class='decl'>=></span> res.<span class='exec'>json</span>())
+      .<span class='exec'>then</span>(res <span class='decl'>=></span> {
+        console.<span class='exec'>log</span>(res)
+        console.<span class='exec'>timeEnd</span>(<span class='str'>'fetching data...'</span>)
+      })
+
+      <span class='com'>// Table</span>
+      console.<span class='exec'>table</span>(dogs)
+    </div>
   </body>
+  <script type="text/javascript" src='/js/index.js'></script>
 </html>

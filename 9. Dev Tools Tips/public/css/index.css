@@ -12,3 +12,45 @@ body, html {
 p {
   transition: 2s cubic-bezier(0.54, 0.14, 0.36, 1.31);
 }
+
+.display-code {
+  white-space: pre-wrap;
+  background: #282c34;
+  color: #abb2bf;
+}
+
+.decl {
+  color: #c678dd;
+}
+
+.com {
+  color: #5c6370;
+}
+
+.exec {
+  color: #61afe3;
+}
+
+.str {
+  color: #98c379;
+}
+
+.attr {
+  color: #e06c75;
+}
+
+.curly {
+  color: #be5046;
+}
+
+.maths {
+  color: #e5c07b;
+}
+
+.num {
+  color: #d19a66;
+}
+
+.opp {
+  color: #56b6c2;
+}

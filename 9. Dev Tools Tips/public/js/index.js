@@ -33,9 +33,49 @@ console.error('create-react-app now on it\'s way to your flat now to kick ur ass
 console.info('Did u know that automobiles are tawdery hold overs from the early 20th centruy')
 
 // Testing
-console.assert('oddert' === 'is awake')
+console.assert('oddert' === 'is awake', 'As it turns out "oddert" !== "is awake"')
+
+// Clearing
+// console.clear()
+
+// Viewing DOM Elems
+const elem = document.querySelector('p')
+console.log(elem)
+console.dir(elem)
+
+// Grouping logs
+dogs.forEach(each => {
+  console.group(`${each.name}`)
+  console.log(`The first dug is ${each.name}`)
+  console.log(`${each.name} is ${each.age} old`)
+  console.log(`which means they are ${each.age * 7} in dug years`)
+  console.groupEnd(`${each.name}`)
+})
+
+// Count
+console.count('Scott')
+console.count('Scott')
+console.count('Scott')
+console.count('Jim')
+console.count('Scott')
+console.count('Jim')
+console.count('Jim')
+console.count('Scott')
+console.count('Jim')
+console.count('Scott')
+console.count('Jim')
 
 
+// Timing
+console.time('fetching data...')
+fetch('https://api.github.com/users/Oddert')
+.then(res => res.json())
+.then(res => {
+  console.log(res)
+  console.timeEnd('fetching data...')
+})
 
+// Table
+console.table(dogs)
 
 // })
