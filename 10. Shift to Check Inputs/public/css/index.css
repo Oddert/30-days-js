@@ -12,3 +12,23 @@ body, html {
 h1 {
   color: tomato;
 }
+
+.title {
+  font-family: lobster, arial, monospace, sans-serif;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  min-width: 30vw;
+}
+
+.form-group {
+  padding: 4px;
+  border-bottom: 1px dashed #bec3c7;
+}
