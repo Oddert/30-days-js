@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Oddert 30 Days of Javascript</title>
-    <script type="text/javascript" src='/js/index.js'></script>
     <link rel="stylesheet" href="/css/index.css">
   </head>
   <body>
-    <div class="player-control">
-      <div class="progress">
-        <div class="progress-filled"></div>
+    <div class="player">
+      <video src="/2018-11-11 16.09.20.mp4" class="player-video viewer"></video>
+      <div class="player-control">
+        <div class="progress">
+          <div class="progress-filled"></div>
+        </div>
+        <button class="player_button toggle" title="Toggle Play">▶</button>
+        <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
+        <input type="range" name="playback" class="player-slider" min="0.5" max="2" step="0.1" value="1">
+        <button data-skip="-10" class="player-button">« 10s</button>
+        <button data-skip="25" class="player-button">25s »</button>
       </div>
-      <button type="player_button toggle" title="Toggle Play">▶</button>
-      <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
-      <input type="range" name="playback" class="player-slider" min="0.5" max="2" step="0.1" value="1">
-      <button data-skip="-10" class="player-button">« 10s</button>
-      <button data-skip="25" class="player-button">25s »</button>
     </div>
   </body>
+  <script type="text/javascript" src='/js/index.js'></script>
 </html>

@@ -12,3 +12,7 @@ body, html {
 h1 {
   color: tomato;
 }
+
+.player .viewer {
+  max-height: 70vh;
+}
