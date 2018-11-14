@@ -16,20 +16,36 @@ h1 {
 .player {
   /* min-height: 30vh;
   max-height: 70vh; */
+  width: 75vw;
   border: 1px solid tomato;
   position: relative;
 }
 
 .player .viewer {
   border: 1px dashed steelblue;
+  width: 100%;
 }
 
 .player-control {
   border: 1px dashed tomato;
   position: absolute;
   bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
+
+.skip-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.skip-buttons > button {
+  flex: 1;
+  white-space: nowrap;
+}
 
 
 
@@ -37,8 +53,9 @@ h1 {
   height: 15px;
 }
 
-.player-controls > * {
+.player-control > * {
   flex: 1;
+  border: 1px dashed green;
 }
 
 .progress {
@@ -56,5 +73,5 @@ h1 {
   width: 50%;
   background: #ffc600;
   flex: 0;
-  flex-basis: 50%;
+  flex-basis: 0%;
 }
