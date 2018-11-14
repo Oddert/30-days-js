@@ -13,6 +13,48 @@ h1 {
   color: tomato;
 }
 
+.player {
+  /* min-height: 30vh;
+  max-height: 70vh; */
+  border: 1px solid tomato;
+  position: relative;
+}
+
 .player .viewer {
-  max-height: 70vh;
+  border: 1px dashed steelblue;
+}
+
+.player-control {
+  border: 1px dashed tomato;
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+
+.player:hover .progress {
+  height: 15px;
+}
+
+.player-controls > * {
+  flex: 1;
+}
+
+.progress {
+  flex: 10;
+  position: relative;
+  display: flex;
+  flex-basis: 100%;
+  height: 5px;
+  transition: height 0.3s;
+  background: rgba(0,0,0,0.5);
+  cursor: ew-resize;
+}
+
+.progress-filled {
+  width: 50%;
+  background: #ffc600;
+  flex: 0;
+  flex-basis: 50%;
 }
