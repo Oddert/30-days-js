@@ -1,0 +1,55 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: skyblue; */
+  background-repeat: repeat;
+}
+
+* {
+  font-family: helvetica, arial, sans-serif, 'open sans';
+}
+
+h1 {
+  color: tomato;
+}
+
+.display_flex {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display {
+  /* display: inline-block; */
+  /* border: 1px dashed steelblue; */
+}
+
+.display h1 {
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 5px;
+}
+
+.display span {
+  margin: 0px 20px;
+}
+
+.notahint {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  color: #2d3e50;
+  font-family: 'open sans';
+  font-weight: 700;
+}
