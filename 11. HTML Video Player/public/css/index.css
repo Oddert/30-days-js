@@ -49,6 +49,16 @@ body, .blur {
   margin-top: 50px;
 }
 
+.player:fullscreen {
+  max-width: none;
+  width: 100%;
+}
+
+.player:-webkit-full-screen {
+  max-width: none;
+  width: 100%;
+}
+
 .player .viewer {
   /* border: 1px dashed steelblue; */
   /* max-height: 70vh; */
