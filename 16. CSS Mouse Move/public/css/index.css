@@ -1,0 +1,25 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: helvetica, arial, sans-serif, 'open sans';
+  cursor: default;
+}
+
+h1 {
+  color: tomato;
+  font-size: 100px;
+  text-shadow: 10px 10px 0 rgba(0,0,0,1);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
