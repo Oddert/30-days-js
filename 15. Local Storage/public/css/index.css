@@ -5,10 +5,172 @@ body, html {
   box-sizing: border-box;
 }
 
-* {
-  font-family: helvetica, arial, sans-serif, 'open sans';
+body {
+  background-image: url('https://ak1.picdn.net/shutterstock/videos/22269181/thumb/1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-h1 {
-  color: tomato;
+* {
+  font-family: helvetica, arial, sans-serif, 'open sans';
+
 }
+
+.list-flex {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-container {
+  background-image: url('https://static.roofingsuperstore.co.uk/u/prod/l/ssq-domiz-natural-spanish-slate-grade-blue-grey-rcupgdnpe5.jpg');
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  /* box-shadow: 2px 3px 0px 2px #383F4A; */
+  border-right: 3px solid #383F4A;
+  border-bottom: 6px solid #21252c;
+  box-shadow: 5px 10px 20px rgba(0,0,0,.3);
+  border-radius: 8px;
+  padding: 0px 40px 30px 40px;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  /* color: #313B44;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.1); */
+  background-color: #313B44;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* text-shadow: rgba(97,114,129, .9) 0px 2px 1px; */
+  text-shadow: rgba(153,167,178, .9) 0px 3px 1px;
+  font-size: 36px;
+}
+
+.list li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b6c0c8;
+  font-size: 20px;
+
+}
+
+li input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+}
+
+.delete {
+  border: 2px solid rgba(255,255,255,0);
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s linear;
+}
+
+.delete:hover {
+  color: #ecf0f1;
+  border: 2px solid #ecf0f1;
+}
+
+
+.new_item {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 18px;
+  color: #2d3e50;
+  margin: 20px 0px;
+}
+
+.new_item input[type=text] {
+  flex: 1;
+  color: #2d3e50;
+  background: #fff;
+  border: 2px solid #ecf0f1;
+  border-right: none;
+  border-radius: 10px 0px 0px 10px;
+  transition: .1s linear;
+  padding: 2px 10px;
+  box-shadow: -1px -3px 2px rgba(49, 59, 68, .8), 1px 2px 2px rgba(182, 192, 200, .4);
+}
+.new_item input[type=submit] {
+  background: #ecf0f1;
+  color: #2d3e50;
+  border: 2px solid #ecf0f1;
+  border-left: 2px solid #ecf0f1;
+  border-radius: 0px 10px 10px 0px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .1s linear;
+  box-shadow: 0px -3px 2px rgba(49, 59, 68, .8), 1px 2px 2px rgba(182, 192, 200, .4);
+}
+
+.new_item input[type=submit]:hover {
+  background-color: #bec3c7;
+  border: 2px solid #bec3c7;
+}
+.new_item input[type=submit]:active {
+  border: 2px solid #bec3c7;
+}
+
+
+.control button {
+  background: #ecf0f1;
+  color: #2d3e50;
+  border: 2px solid #ecf0f1;
+  border-left: 2px solid #ecf0f1;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .1s linear;
+  box-shadow: 0px -3px 2px rgba(49, 59, 68, .8), 1px 2px 2px rgba(182, 192, 200, .4);
+}
+
+.control button:hover {
+  background-color: #bec3c7;
+  border: 2px solid #bec3c7;
+}
+.control button:active {
+  border: 2px solid #bec3c7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
