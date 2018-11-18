@@ -1,0 +1,32 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: helvetica, arial, sans-serif, 'open sans';
+}
+
+h1 {
+  color: tomato;
+}
+
+.video {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.video span {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.thumbnail {
+  max-height: 100px;
+  max-width: 100px;
+}
