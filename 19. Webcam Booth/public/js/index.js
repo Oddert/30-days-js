@@ -12,6 +12,13 @@ let inputOptions = document.querySelectorAll('.input_option') || []
 const filters = document.querySelector('.filters')
 
 
+function handleError (err) {
+  console.error('Error:', err)
+  let errorBox = document.querySelector('.error')
+  errorBox.innerHTML = err
+  errorBox.classList.remove('hide')
+}
+
 let selectedVideoInput = null
 
 function writeMediaOptions () {
@@ -43,7 +50,7 @@ function changeVideoInput (e) {
 function getVideo (deviceId) {
   let constraints = {
     audio: false,
-    video: id ? { deviceId } : true
+    video: deviceId ? { deviceId } : true
   }
   console.log(`Initialising Video: `, { constraints })
   navigator.mediaDevices.getUserMedia(constraints)
@@ -51,10 +58,7 @@ function getVideo (deviceId) {
       video.srcObject = localMediaStream
       video.play()
     })
-    .catch(err => {
-      console.error('Error:', err)
-      document.querySelector('.error').innerHTML = err
-    })
+    .catch(err => handleError(err))
 }
 
 var paintInterval

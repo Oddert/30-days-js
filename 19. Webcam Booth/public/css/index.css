@@ -13,6 +13,21 @@ h1 {
   color: tomato;
 }
 
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid tomato;
+  border-radius: 10px;
+  padding: 20px 30px;
+  background: rgba(232, 76, 61, .1);
+  margin: 10px;
+}
+
+.error.hide {
+  display: none;
+}
+
 
 .player {
   position: fixed;
