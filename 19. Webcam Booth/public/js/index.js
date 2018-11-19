@@ -12,7 +12,7 @@ let inputOptions = document.querySelectorAll('.input_option') || []
 const filters = document.querySelector('.filters')
 
 
-let selector = null
+let selectedVideoInput = null
 
 function writeMediaOptions () {
   navigator.mediaDevices.enumerateDevices()
@@ -36,13 +36,14 @@ writeMediaOptions ()
 navigator.mediaDevices.ondevicechange = writeMediaOptions
 
 function changeVideoInput (e) {
+  selectedVideoInput = e.target.dataset.id
   getVideo(e.target.dataset.id)
 }
 
-function getVideo (id) {
+function getVideo (deviceId) {
   let constraints = {
     audio: false,
-    video: id ? { deviceId: id } : true
+    video: id ? { deviceId } : true
   }
   console.log(`Initialising Video: `, { constraints })
   navigator.mediaDevices.getUserMedia(constraints)
@@ -156,7 +157,7 @@ function changeFilter (e) { paintToCanvas(e.target.dataset.effect) }
 
 
 // getVideo("666703b5348f01212903ea106bed3b34e1544217f20723127c0d7925452dd57f")
-getVideo()
+getVideo(selectedVideoInput)
 
 video.addEventListener('canplay', paintToCanvas)
 photobutton.addEventListener('click', takePhoto)
