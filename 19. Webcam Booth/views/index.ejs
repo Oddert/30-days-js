@@ -6,9 +6,19 @@
     <link rel="stylesheet" href="/css/index.css">
   </head>
   <body>
+    <div class="error">
+
+    </div>
+    <div class="videoList"></div>
+    <!-- <input type="color" name="color_test" class="color_test" /> -->
+    <div class="filters">
+      <button class="filter_button red" data-effect="redFilter">Red Filter</button>
+      <button class="filter_button rgbSplit" data-effect="rgbSplit">RGB Channels</button>
+      <button class="filter_button gscreen" data-effect="greenScreen">Green Screen</button>
+    </div>
     <div class="photobooth">
       <div class="controls">
-        <button onClick="takePhoto()">Take Photo</button>
+        <button class="photobutton">Take Photo</button>
         <div class="rgb">
           <label for="rmin">Red Min:</label>
           <input type="range" name="rmin" min=0 max=255 />
