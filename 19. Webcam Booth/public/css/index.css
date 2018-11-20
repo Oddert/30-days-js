@@ -50,6 +50,17 @@ body > * {
   border: 1px solid #bec3c7;
   border-radius: 10px;
   padding: 10px;
+  transition: .1s linear;
+  cursor: pointer;
+}
+.videoList li:hover {
+  background: #ecf0f1;
+}
+.videoList li:active {
+  background: #bec3c7;
+}
+.videoList li.active {
+  border: 1px solid steelblue;
 }
 
 .player {

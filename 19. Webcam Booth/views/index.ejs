@@ -15,12 +15,38 @@
     </div>
     <!-- <input type="color" name="color_test" class="color_test" /> -->
     <div class="filters">
-      <button class="filter_button red" data-effect="redFilter">Red Filter</button>
-      <button class="filter_button rgbSplit" data-effect="rgbSplit">RGB Channels</button>
+      <h3>Filters</h3>
+      <button class="filter_button overlay" data-effect="overlay">Colour Overlay</button>
+      <button class="filter_button channel_glitch" data-effect="channel_glitch">RGB Channels</button>
       <button class="filter_button gscreen" data-effect="greenScreen">Green Screen</button>
     </div>
+
+    <div class="photobooth">
+      <div class="controls">
+        <button class="photobutton">Take Photo</button>
+      </div>
+      <canvas class="photo"></canvas>
+      <video class="player"></video>
+      <div class="strip"></div>
+    </div>
+    
     <div class="filter_controls">
-      <div class="rgb">
+      <h3>Filter Controls</h3>
+      <div class="color_overlay">
+        <p>Colour Overlay Controls:</p>
+        <button class="overlay-red">Red Overlay</button>
+        <button class="overlay-green">Green Overlay</button>
+        <button class="overlay-blue">Blue Overlay</button>
+      </div>
+
+      <div class="channel_glitch">
+        <p>RGB Channels Controls:</p>
+        <label for="channel_glitch-slider">Offset:</label>
+        <input type="range" name="channel_glitch-slider" min=0 max=300 value=100 />
+      </div>
+
+      <div class="gscreen">
+        <p>Green Screen Controls:</p>
         <label for="rmin">Red Min:</label>
         <input type="range" name="rmin" min=0 max=255 />
         <label for="rmax">Red Max:</label>
@@ -41,14 +67,7 @@
 
       </div>
     </div>
-    <div class="photobooth">
-      <div class="controls">
-        <button class="photobutton">Take Photo</button>
-      </div>
-      <canvas class="photo"></canvas>
-      <video class="player"></video>
-      <div class="strip"></div>
-    </div>
+
     <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
   </body>
   <script type="text/javascript" src='/js/index.js'></script>

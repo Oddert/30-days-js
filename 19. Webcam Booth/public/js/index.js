@@ -29,7 +29,8 @@ function writeMediaOptions () {
       devices
       .filter(each => (each.label.match(/\W/i) && each.kind.match(/(\w+)(input|output)/i).includes("video")))
       .forEach((each, idx) => {
-        let elem = `<li class="input_option" data-index=${idx} data-id="${each.deviceId}">${each.label}</li>`
+        let id = each.deviceId
+        let elem = `<li class="input_option" data-index=${idx} data-id="${id}">${each.label}</li>`
         output.push(elem)
       })
       videoList.innerHTML = output.join('')
@@ -42,9 +43,18 @@ writeMediaOptions ()
 
 navigator.mediaDevices.ondevicechange = writeMediaOptions
 
+function writeSelectedOption () {
+  document.querySelectorAll('.input_option').forEach(each => {
+    console.log(each, selectedVideoInput)
+    if (each.dataset.id == selectedVideoInput) each.classList.add('active')
+    else each.classList.remove('active')
+  })
+}
+
 function changeVideoInput (e) {
   selectedVideoInput = e.target.dataset.id
   console.log(`Changing source to deviceId: ${selectedVideoInput}`)
+  writeSelectedOption()
   getVideo(e.target.dataset.id)
 }
 
@@ -72,6 +82,8 @@ function paintToCanvas (filter) {
   canvas.width = width
   canvas.height = height
 
+  console.log(`Setting paint canvas interval`)
+  console.log(`Selected filter is: ${filter}`)
   paintInterval = setInterval(() => {
     ctx.drawImage(video, 0, 0, width, height)
 
@@ -79,10 +91,10 @@ function paintToCanvas (filter) {
     let filterOutput = pixels
 
     switch(filter) {
-      case "redFilter":
-        filterOutput = redFilter(pixels)
-      case "rgbSplit":
-        filterOutput = rgbSplit(pixels)
+      case "overlay":
+        filterOutput = overlay(pixels)
+      case "channel_glitch":
+        filterOutput = channel_glitch(pixels)
       case "greenScreen":
         filterOutput = greenScreen(pixels)
       default:
@@ -109,7 +121,7 @@ function takePhoto () {
 
 
 // ========== Filters ==========
-function redFilter (pixels) {
+function overlay (pixels) {
   for (var i=0; i<pixels.data.length; i+=4) {
     pixels.data[i + 0] = pixels.data[i + 0] + 100
     pixels.data[i + 1] = pixels.data[i + 1] - 50
@@ -118,7 +130,7 @@ function redFilter (pixels) {
   return pixels
 }
 
-function rgbSplit (pixels) {
+function channel_glitch (pixels) {
   for (var i=0; i<pixels.data.length; i+=4) {
     pixels.data[i - 75] = pixels.data[i + 0]
     pixels.data[i + 50] = pixels.data[i + 1]
@@ -130,7 +142,7 @@ function rgbSplit (pixels) {
 function greenScreen (pixels) {
   const levels = {}
 
-  document.querySelectorAll('.rgb input').forEach(each => levels[each.name] = each.value)
+  document.querySelectorAll('.gscreen input').forEach(each => levels[each.name] = each.value)
 
   for (var j=0; j<pixels.data.length; j+=4) {
     red = pixels.data[j + 0]
@@ -161,7 +173,6 @@ function changeFilter (e) { paintToCanvas(e.target.dataset.effect) }
 
 
 let dev = true
-// setTimeout(() => dev = false, 5000)
 if (dev) getVideo("0d8c1b8e69d25a3f89ae4a9bf8e2a26b7368388138ae9046fe2a7ac3b7671e9d")
 else getVideo(selectedVideoInput)
 
