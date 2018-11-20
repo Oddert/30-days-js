@@ -13,6 +13,10 @@ h1 {
   color: tomato;
 }
 
+body > * {
+  outline: 1px dashed steelblue;
+}
+
 .error {
   display: flex;
   align-items: center;
@@ -28,6 +32,25 @@ h1 {
   display: none;
 }
 
+.video_list-flex {
+
+}
+
+.video_list-flex h3 {
+  margin: 0;
+}
+
+.videoList, .videoList li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.videoList li {
+  border: 1px solid #bec3c7;
+  border-radius: 10px;
+  padding: 10px;
+}
 
 .player {
   position: fixed;
@@ -35,4 +58,11 @@ h1 {
   right: 0;
   max-width: 200px;
   max-height: 200px;
+}
+
+.photobooth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

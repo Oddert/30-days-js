@@ -44,6 +44,7 @@ navigator.mediaDevices.ondevicechange = writeMediaOptions
 
 function changeVideoInput (e) {
   selectedVideoInput = e.target.dataset.id
+  console.log(`Changing source to deviceId: ${selectedVideoInput}`)
   getVideo(e.target.dataset.id)
 }
 
@@ -159,9 +160,12 @@ function changeFilter (e) { paintToCanvas(e.target.dataset.effect) }
 // document.querySelector('.color_test').addEventListener('change', e => hexToRgb(e.target.value))
 
 
+let dev = true
+// setTimeout(() => dev = false, 5000)
+if (dev) getVideo("0d8c1b8e69d25a3f89ae4a9bf8e2a26b7368388138ae9046fe2a7ac3b7671e9d")
+else getVideo(selectedVideoInput)
 
-// getVideo("666703b5348f01212903ea106bed3b34e1544217f20723127c0d7925452dd57f")
-getVideo(selectedVideoInput)
+
 
 video.addEventListener('canplay', paintToCanvas)
 photobutton.addEventListener('click', takePhoto)

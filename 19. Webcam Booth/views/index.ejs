@@ -9,36 +9,41 @@
     <div class="error hide">
 
     </div>
-    <div class="videoList"></div>
+    <div class="video_list-flex">
+      <h3>Select Video Source</h3>
+      <ul class="videoList"></ul>
+    </div>
     <!-- <input type="color" name="color_test" class="color_test" /> -->
     <div class="filters">
       <button class="filter_button red" data-effect="redFilter">Red Filter</button>
       <button class="filter_button rgbSplit" data-effect="rgbSplit">RGB Channels</button>
       <button class="filter_button gscreen" data-effect="greenScreen">Green Screen</button>
     </div>
+    <div class="filter_controls">
+      <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" name="rmin" min=0 max=255 />
+        <label for="rmax">Red Max:</label>
+        <input type="range" name="rmax" min=0 max=255 />
+        <br />
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" name="gmin" min=0 max=255 />
+        <label for="gmax">Green Max:</label>
+        <input type="range" name="gmax" min=0 max=255 />
+        <br />
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" name="bmin" min=0 max=255 />
+        <label for="bmax">Blue Max:</label>
+        <input type="range" name="bmax" min=0 max=255 />
+        <br />
+
+      </div>
+    </div>
     <div class="photobooth">
       <div class="controls">
         <button class="photobutton">Take Photo</button>
-        <div class="rgb">
-          <label for="rmin">Red Min:</label>
-          <input type="range" name="rmin" min=0 max=255 />
-          <label for="rmax">Red Max:</label>
-          <input type="range" name="rmax" min=0 max=255 />
-          <br />
-
-          <label for="gmin">Green Min:</label>
-          <input type="range" name="gmin" min=0 max=255 />
-          <label for="gmax">Green Max:</label>
-          <input type="range" name="gmax" min=0 max=255 />
-          <br />
-
-          <label for="bmin">Blue Min:</label>
-          <input type="range" name="bmin" min=0 max=255 />
-          <label for="bmax">Blue Max:</label>
-          <input type="range" name="bmax" min=0 max=255 />
-          <br />
-
-        </div>
       </div>
       <canvas class="photo"></canvas>
       <video class="player"></video>
