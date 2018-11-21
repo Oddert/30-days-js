@@ -5,6 +5,10 @@ body, html {
   box-sizing: border-box;
 }
 
+body {
+  padding-top: 50px;
+}
+
 * {
   font-family: helvetica, arial, sans-serif, 'open sans';
 }
@@ -14,7 +18,11 @@ h1 {
 }
 
 body > * {
-  outline: 1px dashed steelblue;
+  /* outline: 1px dashed steelblue; */
+}
+
+.hidden {
+  display: none;
 }
 
 .error {
@@ -32,13 +40,47 @@ body > * {
   display: none;
 }
 
-.video_list-flex {
 
+
+.video_list-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 15px;
+  transition: .2s linear;
+  z-index: 9999;
+}
+.video_list-flex.hide {
+  transform: translateY(-100%);
 }
 
 .video_list-flex h3 {
-  margin: 0;
+  margin: 10px 0px;
 }
+
+.video_list-flex .toggle_hide {
+  /* margin-top: 10px; */
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  transform: translateY(100%);
+  padding: 10px;
+  color: #2d3e50;
+  background: #fff;
+  border: none;
+  border-radius: 0px 0px 10px 10px;
+}
+.toggle_hide:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.video_list-flex .toggle_hide::after { content: " ▲" }
+.video_list-flex.hide .toggle_hide::after { content: " ▼" }
 
 .videoList, .videoList li {
   margin: 0;
@@ -47,7 +89,7 @@ body > * {
 }
 
 .videoList li {
-  border: 1px solid #bec3c7;
+  border: 2px solid #bec3c7;
   border-radius: 10px;
   padding: 10px;
   transition: .1s linear;
@@ -60,7 +102,7 @@ body > * {
   background: #bec3c7;
 }
 .videoList li.active {
-  border: 1px solid steelblue;
+  border: 3px solid steelblue;
 }
 
 .player {
@@ -69,6 +111,7 @@ body > * {
   right: 0;
   max-width: 200px;
   max-height: 200px;
+  z-index: 999;
 }
 
 .photobooth {
@@ -76,4 +119,29 @@ body > * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.photo {
+  position: relative;
+}
+
+.booth {
+  border: 2px solid tomato;
+  position: relative;
+}
+
+.photobutton {
+  height: 75px;
+  width: 75px;
+  background: rgba(255,255,255,.3);
+  color: #bec3c7;
+  border: 3px solid #bec3c7;
+  border-radius: 50%;
+  font-size: 28px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  z-index: 100;
 }

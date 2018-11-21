@@ -9,43 +9,46 @@
     <div class="error hide">
 
     </div>
-    <div class="video_list-flex">
+    <div class="video_list-flex hide">
       <h3>Select Video Source</h3>
       <ul class="videoList"></ul>
+      <button class="toggle_hide">Change Camera</button>
     </div>
     <!-- <input type="color" name="color_test" class="color_test" /> -->
     <div class="filters">
       <h3>Filters</h3>
-      <button class="filter_button overlay" data-effect="overlay">Colour Overlay</button>
+      <button class="filter_button color_overlay" data-effect="color_overlay">Colour Overlay</button>
       <button class="filter_button channel_glitch" data-effect="channel_glitch">RGB Channels</button>
-      <button class="filter_button gscreen" data-effect="greenScreen">Green Screen</button>
+      <button class="filter_button green_screen" data-effect="green_screen">Green Screen</button>
     </div>
 
     <div class="photobooth">
-      <div class="controls">
-        <button class="photobutton">Take Photo</button>
+      <div class="booth">
+        <button class="photobutton" title="Take Photo">📷</button>
+        <canvas class="photo"></canvas>
       </div>
-      <canvas class="photo"></canvas>
+
       <video class="player"></video>
       <div class="strip"></div>
     </div>
-    
+
     <div class="filter_controls">
       <h3>Filter Controls</h3>
-      <div class="color_overlay">
+
+      <div class="color_overlay_controls hidden">
         <p>Colour Overlay Controls:</p>
         <button class="overlay-red">Red Overlay</button>
         <button class="overlay-green">Green Overlay</button>
         <button class="overlay-blue">Blue Overlay</button>
       </div>
 
-      <div class="channel_glitch">
+      <div class="channel_glitch_controls hidden">
         <p>RGB Channels Controls:</p>
         <label for="channel_glitch-slider">Offset:</label>
         <input type="range" name="channel_glitch-slider" min=0 max=300 value=100 />
       </div>
 
-      <div class="gscreen">
+      <div class="green_screen_controls hidden">
         <p>Green Screen Controls:</p>
         <label for="rmin">Red Min:</label>
         <input type="range" name="rmin" min=0 max=255 />
