@@ -1,0 +1,36 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: helvetica, arial, sans-serif, 'open sans';
+}
+
+h1 {
+  color: tomato;
+}
+
+.avatar .head {
+  width: 200px;
+  height: 100px;
+  border: 20px solid #bec3c7;
+  border-radius: 70px;
+}
+
+.avatar .eyes {
+  display: flex;
+  height: 50px;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar .eyes .eye {
+  width: 50px;
+}
+
+.eye.left { margin-right: 10px; }
+.eye.right { margin-left: 10px; }
