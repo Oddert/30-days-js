@@ -15,7 +15,7 @@ h1 {
 
 .avatar {
   width: 320px;
-  border: 1px dashed tomato;
+  border: 1px dashed rgba(230, 127, 34, .3);
 }
 
 .avatar .hat {
@@ -35,16 +35,20 @@ h1 {
   background: rgba(93, 182, 249, 1);
   box-shadow: 0px 0px 10px rgba(93, 182, 249, 1);
 }
+.hat-orb.talking {
+  background: rgba(45, 204, 112, 1);
+  box-shadow: 0px 0px 10px rgba(45, 204, 112, 1);
+}
 
 .avatar .head-cont {
-  border: 1px solid steelblue;
+  /* border: 1px solid steelblue; */
   display: flex;
   /* width: auto; */
 }
 
 .avatar .head {
   height: 100px;
-  width: 200px;
+  width: 180px;
   border: 20px solid #bec3c7;
   border-radius: 70px;
   /* background: rgba(52, 73, 94, .3); */
