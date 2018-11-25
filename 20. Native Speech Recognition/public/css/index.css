@@ -13,12 +13,75 @@ h1 {
   color: tomato;
 }
 
+.avatar {
+  width: 320px;
+  border: 1px dashed tomato;
+}
+
+.avatar .hat {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hat-orb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(41, 127, 184, 1);
+}
+.hat-orb.lightup {
+  background: rgba(93, 182, 249, 1);
+  box-shadow: 0px 0px 10px rgba(93, 182, 249, 1);
+}
+
+.avatar .head-cont {
+  border: 1px solid steelblue;
+  display: flex;
+  /* width: auto; */
+}
+
 .avatar .head {
-  width: 200px;
   height: 100px;
+  width: 200px;
   border: 20px solid #bec3c7;
   border-radius: 70px;
+  /* background: rgba(52, 73, 94, .3); */
 }
+
+.avatar .ear-cont {
+  min-width: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* background: red; */
+}
+
+.avatar .ear-cont .ear {
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  background: #bec3c7;
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar .ear-cont .ear .innerEar {
+  background: #95a5a5;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+
+.avatar .ear-cont .ear.left { justify-content: flex-end; }
+.avatar .ear-cont .ear.left .innerEar { margin-right: 3px; }
+.avatar .ear-cont .ear.right { justify-content: flex-start; }
+.avatar .ear-cont .ear.right .innerEar { margin-left: 3px; }
 
 .avatar .eyes {
   display: flex;
@@ -34,3 +97,15 @@ h1 {
 
 .eye.left { margin-right: 10px; }
 .eye.right { margin-left: 10px; }
+
+
+.avatar .mouth-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+
+.avatar .mouth-cont .mouth {
+  width: 50px;
+}
