@@ -10,6 +10,5 @@ I'll stick to the strict rules outlined bellow and set up a blog soon to documen
 
 ## Rules
 * No frameworks
-* Only use libraries if it would be nonsensical to not do so
 * No Compilers
 * Complete One challenge a day (flexible because of life)
