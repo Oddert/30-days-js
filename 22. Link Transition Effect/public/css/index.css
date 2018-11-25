@@ -5,10 +5,54 @@ body, html {
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(45deg, #c000ff, #00fff2);
+}
+
 * {
   font-family: helvetica, arial, sans-serif, 'open sans';
 }
 
 h1 {
   color: tomato;
+}
+
+a {
+  text-decoration: none;
+  color: #2d3e50;
+  background: rgba(0,0,0,.05);
+  border-radius: 20px;
+  /* padding: 10px; */
+}
+
+.wrapper {
+  white-space: pre-line;
+}
+
+.highlight {
+  transition: .2s;
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: -1;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.menu {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 100px 0px;
+}
+
+.menu a {
+  display: inline-block;
+  margin: 0 20px;
+  color: #222;
+  padding: 5px;
 }
