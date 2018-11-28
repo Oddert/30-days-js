@@ -12,3 +12,29 @@ body, html {
 h1 {
   color: tomato;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+}
+
+video {
+  max-width: 60vw;
+}
+
+.speed {
+  width: 100px;
+  height: 250px;
+  margin: 50px;
+  background: tomato;
+}
+
+.speed-bar {
+  background: steelblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
