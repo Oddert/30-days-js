@@ -12,3 +12,48 @@ body, html {
 h1 {
   color: tomato;
 }
+
+.item:nth-child(8n+0) {
+  background-color: rgba(232,76,61,1);
+}
+.item:nth-child(8n+1) {
+  background-color: rgba(230,127,34,1);
+}
+.item:nth-child(8n+2) {
+  background-color: rgba(241,196,15,1);
+}
+.item:nth-child(8n+3) {
+  background-color: rgba(27,188,155,1);
+}
+.item:nth-child(8n+4) {
+  background-color: rgba(45,204,112,1);
+}
+.item:nth-child(8n+5) {
+  background-color: rgba(53,152,219,1);
+}
+.item:nth-child(8n+6) {
+  background-color: rgba(154,89,181,1);
+}
+.item:nth-child(8n+7) {
+  background-color: rgba(52,73,94,1);
+}
+
+.items {
+  display: flex;
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100vh;
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.item {
+  /* width: 200px; */
+  height:  200px;
+  padding: 0px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
