@@ -5,6 +5,11 @@ body, html {
   box-sizing: border-box;
 }
 
+body {
+  min-height: 100vh;
+  background: linear-gradient(45deg, #c000ff, #00fff2);
+}
+
 * {
   font-family: helvetica, arial, sans-serif, 'open sans';
 }
@@ -26,9 +31,21 @@ h1 {
 
 .list {
   min-width: 30vw;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .form-group {
   padding: 4px;
   border-bottom: 1px dashed #bec3c7;
+  transition: .1s linear;
+}
+
+.form-group:hover {
+  background: #ecf0f1;
+}
+
+.multiHover {
+  background: #ecf0f1;
 }

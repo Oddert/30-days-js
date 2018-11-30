@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/public/index.css">
   </head>
   <body>
-    <div class="no">
+    <div class="project-container">
       <% projects.forEach(each => { %>
-        <ul>
+        <ul class="project">
           <a href="/<%= each.title %>">
             <%= each.title %>
             <% if (each.workToDo) { %>

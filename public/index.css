@@ -4,6 +4,42 @@
   font-family: sans-serif, arial, helvetica, 'open sans';
 }
 
+
+.project-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.project {
+  list-style-type: none;
+  padding: 0 30px;
+  margin: 0;
+  height: 150px;
+  border: 1px solid #ecf0f1;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: .3s linear;
+}
+
+.project:hover {
+  box-shadow: 5px 5px 15px rgba(0,0,0,.08);
+  border: 1px solid #bec3c7;
+}
+
+a {
+  text-decoration: none;
+}
+
 .thumbnail {
   max-width: 150px;
+  max-height: 150px;
+  border-radius: 3px;
 }
