@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oddert 30 Days of Javascript</title>
+    <link rel="stylesheet" href="./public/css/index.css">
+  </head>
+  <body>
+    <div class="error hide">
+
+    </div>
+    <div class="video_list-flex hide">
+      <h3>Select Video Source</h3>
+      <ul class="videoList"></ul>
+      <button class="toggle_hide">Change Camera</button>
+    </div>
+    <!-- <input type="color" name="color_test" class="color_test" /> -->
+    <div class="filters">
+      <h3>Filters</h3>
+      <button class="filter_button color_overlay" data-effect="color_overlay">Colour Overlay</button>
+      <button class="filter_button channel_glitch" data-effect="channel_glitch">RGB Channels</button>
+      <button class="filter_button green_screen" data-effect="green_screen">Green Screen</button>
+    </div>
+
+    <div class="photobooth">
+      <div class="booth">
+        <button class="photobutton" title="Take Photo">📷</button>
+        <canvas class="photo"></canvas>
+      </div>
+
+      <video class="player"></video>
+      <div class="strip"></div>
+    </div>
+
+    <div class="filter_controls">
+      <h3>Filter Controls</h3>
+
+      <div class="color_overlay_controls hidden">
+        <p>Colour Overlay Controls:</p>
+        <button class="overlay-red">Red Overlay</button>
+        <button class="overlay-green">Green Overlay</button>
+        <button class="overlay-blue">Blue Overlay</button>
+      </div>
+
+      <div class="channel_glitch_controls hidden">
+        <p>RGB Channels Controls:</p>
+        <label for="channel_glitch-slider">Offset:</label>
+        <input type="range" name="channel_glitch-slider" min=0 max=300 value=100 />
+      </div>
+
+      <div class="green_screen_controls hidden">
+        <p>Green Screen Controls:</p>
+        <label for="rmin">Red Min:</label>
+        <input type="range" name="rmin" min=0 max=255 />
+        <label for="rmax">Red Max:</label>
+        <input type="range" name="rmax" min=0 max=255 />
+        <br />
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" name="gmin" min=0 max=255 />
+        <label for="gmax">Green Max:</label>
+        <input type="range" name="gmax" min=0 max=255 />
+        <br />
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" name="bmin" min=0 max=255 />
+        <label for="bmax">Blue Max:</label>
+        <input type="range" name="bmax" min=0 max=255 />
+        <br />
+
+      </div>
+    </div>
+
+    <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
+  </body>
+  <script type="text/javascript" src='./public/js/index.js'></script>
+</html>

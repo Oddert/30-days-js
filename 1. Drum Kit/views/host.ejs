@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oddert 30 Days of Javascript | Day #1 Drum Machine</title>
+    <script type="text/javascript" src='./public/js/index.js'></script>
+    <link rel="stylesheet" href="./public/css/index.css">
+  </head>
+  <body>
+    <header>
+      <button onClick='toggleGrid()'>Toggle Grid</button>
+      <button onClick='toggleHalo()'>Toggle Halo Effect</button>
+    </header>
+    <div class='content'>
+      <h1>Drum Machine</h1>
+      <p><a href='https://github.com/Oddert/30-days-js'>#1/30 | 30 Days of Javascript</a> | <a href='https://oddert.github.io/'>Oddert - Robyn Veitch</a></p>
+      <div id='key-container'>
+        <button onClick="handleClick('Q')" id="button-Q" class="button">Q<div id="halo-Q" class="halo"></div></button>
+        <button onClick="handleClick('W')" id="button-W" class="button">W<div id="halo-W" class="halo"></div></button>
+        <button onClick="handleClick('E')" id="button-E" class="button">E<div id="halo-E" class="halo"></div></button>
+        <button onClick="handleClick('A')" id="button-A" class="button">A<div id="halo-A" class="halo"></div></button>
+        <button onClick="handleClick('S')" id="button-S" class="button">S<div id="halo-S" class="halo"></div></button>
+        <button onClick="handleClick('D')" id="button-D" class="button">D<div id="halo-D" class="halo"></div></button>
+        <button onClick="handleClick('Z')" id="button-Z" class="button">Z<div id="halo-Z" class="halo"></div></button>
+        <button onClick="handleClick('X')" id="button-X" class="button">X<div id="halo-X" class="halo"></div></button>
+        <button onClick="handleClick('C')" id="button-C" class="button">C<div id="halo-C" class="halo"></div></button>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'   id='Q' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'   id='W' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'   id='E' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3' id='A' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'   id='S' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'     id='D' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3' id='Z' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3' id='X' class='audio'></audio>
+        <audio src='https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'     id='C' class='audio'></audio>
+      </div>
+    </div>
+  </body>
+</html>

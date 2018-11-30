@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oddert 30 Days of Javascript</title>
+    <link rel="stylesheet" href="/public/index.css">
+  </head>
+  <body>
+    <div class="no">
+      <% projects.forEach(each => { %>
+        <ul>
+          <a href="/<%= each.title %>">
+            <%= each.title %>
+            <% if (each.workToDo) { %>
+              (still work to do)
+            <% } %>
+          </a>
+          <% if (each.thumbnail) { %>
+            <img src="./screenshots/<%= each.thumbnail %>" alt="<%= each.title %> thumbnail" class="thumbnail" />
+          <% } %>
+        </ul>
+      <% }) %>
+    </div>
+  </body>
+</html>
