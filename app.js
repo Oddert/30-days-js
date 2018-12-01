@@ -41,7 +41,11 @@ let projects = [
   , { title: '30. Whack a Mole Game', workToDo: true, thumbnail: '30. Whack a Mole Game.PNG' }
 ]
 
-app.get('/', (req, res) => res.render('index', { projects }))
+app.get('/', (req, res) =>
+  process.env.GLITCH 
+    ? res.render('index_glitch', { projects })
+    : res.render('index', { projects })
+)
 
 app.get('/*', (req, res) =>
   res.render(path.join(
