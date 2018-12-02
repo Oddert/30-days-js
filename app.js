@@ -25,7 +25,7 @@ let projects = [
   , { title: '14. Array Mutability', workToDo: false, thumbnail: '14. Array Mutability.PNG' }
   , { title: '15. Local Storage', workToDo: false, thumbnail: '15. Local Storage.PNG' }
   , { title: '16. CSS Mouse Move', workToDo: false, thumbnail: '16. CSS Mouse Move.PNG' }
-  , { title: '17. Sort without Articles', workToDo: true, thumbnail: null }
+  , { title: '17. Sort without Articles', workToDo: false, thumbnail: '17. Sort Without Articles.PNG' }
   , { title: '18. Tally Video Lengths', workToDo: true, thumbnail: null }
   , { title: '19. Webcam Booth', workToDo: true, thumbnail: 'help.PNG' }
   , { title: '20. Native Speech Recognition', workToDo: true, thumbnail: '20. Native Voice Recognition.PNG' }
