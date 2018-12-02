@@ -29,7 +29,7 @@ let projects = [
   , { title: '18. Tally Video Lengths', workToDo: true, thumbnail: null }
   , { title: '19. Webcam Booth', workToDo: true, thumbnail: 'help.PNG' }
   , { title: '20. Native Speech Recognition', workToDo: true, thumbnail: '20. Native Voice Recognition.PNG' }
-  , { title: '21. Geolocation', workToDo: false, thumbnail: null }
+  , { title: '21. Geolocation', workToDo: true, thumbnail: null }
   , { title: '22. Link Transition Effect', workToDo: false, thumbnail: '22. Link Transition Effect.PNG' }
   , { title: '23. Speech Synthesis', workToDo: true, thumbnail: null }
   , { title: '24. Sticky Nav Bar', workToDo: false, thumbnail: '24. Sticky Nav Bar.PNG' }
@@ -42,7 +42,7 @@ let projects = [
 ]
 
 app.get('/', (req, res) =>
-  process.env.GLITCH 
+  process.env.GLITCH
     ? res.render('index_glitch', { projects })
     : res.render('index', { projects })
 )

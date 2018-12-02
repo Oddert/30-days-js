@@ -12,3 +12,45 @@ body, html {
 h1 {
   color: tomato;
 }
+
+.flex {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  background: linear-gradient(90deg, #9a59b5, #1bbc9b);
+  /* border-left: 1px solid #bec3c7;
+  border-right: 1px solid #bec3c7; */
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.input, .bands {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+}
+.input {
+  background: #9a59b5;
+}
+.bands {
+  background: #1bbc9b;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.container {
+  /* padding: 10px 30px; */
+}
