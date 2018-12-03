@@ -1,7 +1,7 @@
 function updateHand(hand, angle) {
   let elem = document.getElementById(hand)
   if (angle - 90 == 360 || angle - 90 == 0) {
-    console.log(`intervention, angle: ${angle}, angle - 90: ${angle - 90}`)
+    // console.log(`intervention, angle: ${angle}, angle - 90: ${angle - 90}`)
     elem.style.transition = `none`
     elem.style.transform = `rotate(${angle}deg)`
     elem.style.transition = null
@@ -12,8 +12,8 @@ function updateHand(hand, angle) {
 
 const timer = setInterval (() => {
   let date = new Date()
-  console.log('second: ', date.getSeconds())
-  console.log('angle: ', (360/60) * date.getSeconds())
+  // console.log('second: ', date.getSeconds())
+  // console.log('angle: ', (360/60) * date.getSeconds())
   updateHand ('seconds', ((360/60) * date.getSeconds()) + 90)
   updateHand ('minutes', ((360/60) * date.getMinutes()) + 90)
   updateHand ('hours', ((360/12) * date.getHours()) + 90)
