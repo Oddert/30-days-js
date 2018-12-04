@@ -93,5 +93,5 @@ h1 {
   transition: .1s linear;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  stroke-linecap: square;
+  stroke-linejoin: square;
 }

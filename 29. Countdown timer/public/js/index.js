@@ -73,8 +73,12 @@ document.customForm.addEventListener('submit', function (e) {
   e.preventDefault()
   const mins = this.minutes.value
   console.log(mins)
-  if (typeof mins == 'number') timer(mins * 60)
-  else alert(`Please enter a number value`)
+  if (typeof mins == 'number') {
+    setCircleVal(100)
+    timer(mins * 60)
+  } else {
+    alert(`Please enter a number value`)
+  }
   this.reset()
 })
 
