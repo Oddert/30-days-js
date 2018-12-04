@@ -8,19 +8,23 @@
   <body>
     <div class="timer">
       <div class="timer__controls">
-        <button data-time="20" class="timer__button">20 Secs</button>
-        <button data-time="300" class="timer__button">Work 5 Mins</button>
-        <button data-time="900" class="timer__button">Quick 15 Min Break</button>
-        <button data-time="1200" class="timer__button">Snack 20 Mins</button>
-        <button data-time="3600" class="timer__button">Lunch</button>
+        <div class="timer__controls-buttons">
+          <button data-time="20" class="timer__button">20 Secs</button>
+          <button data-time="300" class="timer__button">Work 5 Mins</button>
+          <button data-time="900" class="timer__button">Quick 15 Min Break</button>
+          <button data-time="1200" class="timer__button">Snack 20 Mins</button>
+          <button data-time="3600" class="timer__button">Lunch</button>
+        </div>
         <form name="customForm" id="custom__time">
-          <input type="text" name="minutes" placeholder="Enter Minuites">
+          <input type="text" name="minutes" placeholder="Enter Minutes">
         </form>
         <button class="timer__toggleTwelveHour">24 Hour</button>
       </div>
-      <div class="">
-        <h1 class="display__time-left"></h1>
-        <p class="display__end-time"></p>
+      <div class="display__time">
+        <div class="display__time-inner">
+          <h1 class="display__time-left"></h1>
+          <p class="display__end-time"></p>
+        </div>
       </div>
     </div>
   </body>
