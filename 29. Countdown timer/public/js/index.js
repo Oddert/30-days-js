@@ -64,6 +64,7 @@ function toggleFormat () {
 
 function initTimer () {
   const seconds = parseInt(this.dataset.time)
+  setCircleVal(100)
   timer(seconds)
 }
 
