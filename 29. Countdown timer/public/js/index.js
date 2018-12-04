@@ -4,6 +4,20 @@ const toggleTwelveHour  = document.querySelector('.timer__toggleTwelveHour')
 
 const timeInputs        = document.querySelectorAll('[data-time]')
 
+const circle = document.querySelector('.ring__circle')
+const radius = circle.r.baseVal.value
+const circumferance = radius * 2 * Math.PI
+
+circle.style.strokeDasharray = `${circumferance} ${circumferance}`
+circle.style.strokeDashoffset = `${circumferance}`
+
+function setCircleVal (percent) {
+  const offset = circumferance - percent / 100 * circumferance
+  circle.style.strokeDashoffset = offset
+}
+// setCircleVal(65)
+
+
 let countdown
 let twelveHourTime = true
 
@@ -11,13 +25,17 @@ function timer (secs) {
   clearInterval(countdown)
   const start = Date.now()
   const end = start + secs * 1000
+  const diff = (end-start) / 1000
   displayRemainingTime(secs)
   displayEndTime(end)
 
   countdown = setInterval(() => {
     const timeLeft = Math.round((end - Date.now()) / 1000)
+    const percent = timeLeft / diff * 100
+    const inversePercent = 100 - percent
     if (timeLeft <= 0) clearInterval(countdown)
     displayRemainingTime(timeLeft)
+    setCircleVal(percent)
   }, 1000)
 }
 
