@@ -74,7 +74,7 @@ checkAll.addEventListener('click', checkAllItems)
 unCheckAll.addEventListener('click', unCheckAllItems)
 clear.addEventListener('click', clearAllItems)
 
-const localStoreItems = JSON.parse(localStorage.getItem('items'))
+const localStoreItems = JSON.parse(localStorage.getItem('items')) || []
 console.log(localStoreItems)
 populateList (localStoreItems, list)
 document.querySelector('.title').innerHTML = 'Tapas Menu'
