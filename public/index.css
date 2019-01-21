@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: flex-start; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
@@ -42,4 +42,16 @@ a {
   max-width: 150px;
   max-height: 150px;
   border-radius: 3px;
+}
+
+@media only screen and (max-width: 950px) {
+  .project-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 764px) {
+  .project-container {
+    grid-template-columns: 1fr;
+  }
 }
