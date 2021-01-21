@@ -12,3 +12,19 @@ I'll stick to the strict rules outlined bellow and set up a blog soon to documen
 * No frameworks
 * No Compilers
 * Complete One challenge a day (flexible because of life)
+
+
+## Live Site
+[https://oddert-30-days-js.glitch.me/](https://oddert-30-days-js.glitch.me/)
+
+## Installation
+```
+$ git clone https://github.com/Oddert/chess-game.git
+$ npm run server
+```
+
+## Scripts
+| script | command                                        | action
+|--------|------------------------------------------------|------------------------------------------------|
+| start  | node app.js                                    | runs the server                                |
+| server | nodemon app.js                                 | runs the server with auto restart              |
