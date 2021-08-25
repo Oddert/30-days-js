@@ -20,10 +20,14 @@ const timer = setInterval (() => {
 }, 1000)
 
 let backgrounds = {
-  morning: "https://stmed.net/sites/default/files/lake-wallpapers-27927-377315.jpg",
-  afternoon: "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BcZfIvWQiol01l2w/sun-sparkles-on-rippling-sea-waves-at-noon-slow-motion_hxp0t5i3_thumbnail-full01.png",
-  evening: "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Protection-sea-calm-evening-images-1920x1080-PIC-WPB0012967.jpg",
-  night: "https://www.wallpaperflare.com/static/240/832/1006/evening-night-sea-lake-wallpaper.jpg"
+  // morning: "https://stmed.net/sites/default/files/lake-wallpapers-27927-377315.jpg",
+  // afternoon: "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BcZfIvWQiol01l2w/sun-sparkles-on-rippling-sea-waves-at-noon-slow-motion_hxp0t5i3_thumbnail-full01.png",
+  // evening: "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Protection-sea-calm-evening-images-1920x1080-PIC-WPB0012967.jpg",
+  // night: "https://www.wallpaperflare.com/static/240/832/1006/evening-night-sea-lake-wallpaper.jpg"
+  morning: "./public/img/2. Clock bg image-morning.jpg",
+  afternoon: "./public/img/2. Clock bg image-afternoon.jpg", // low res, considder finding a replacement.	
+  evening: "./public/img/2. Clock bg image-evening.jpg",	
+  night: "./public/img/2. Clock bg image-night.jpg",	
 }
 
 document.addEventListener('DOMContentLoaded', () => {

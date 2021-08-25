@@ -27,4 +27,4 @@ $ npm run server
 | script | command                                        | action
 |--------|------------------------------------------------|------------------------------------------------|
 | start  | node app.js                                    | runs the server                                |
-| server | nodemon app.js                                 | runs the server with auto restart              |
+| dev | nodemon app.js                                 | runs the server with auto restart              |
