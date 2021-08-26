@@ -44,12 +44,13 @@ h1 {
   margin: 0px 20px;
 }
 
-.notahint {
+.not-a-hint {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  top: 70%;
+  right: 50%;
+	transform: translateX(50%);
   padding: 10px;
   color: #2d3e50;
-  font-family: 'open sans';
+  font-family: 'open sans', 'roboto', 'arial', 'sans-serif';
   font-weight: 700;
 }
