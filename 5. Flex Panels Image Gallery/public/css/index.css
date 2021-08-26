@@ -28,6 +28,7 @@ html, body {
 
 .flex {
   flex: 1;
+	cursor: pointer;
   /* border: 1px dashed tomato; */
   background-attachment: fixed;
   background-position: center;
