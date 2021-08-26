@@ -2,11 +2,16 @@ const url = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/ra
 
 const cities = []
 
+const searchInput = document.querySelector('.search')
+const suggestions = document.querySelector('.suggestions')
+const clear = document.querySelector('.search-clear')
+
 fetch(url)
   .then(res => res.json())
   .then(res => {
     cities.push(...res)
     console.log(cities)
+		browserHasRememberedInput()
   })
 
 function search (word, cities) {
@@ -16,17 +21,29 @@ function search (word, cities) {
   })
 }
 
+function clearSearch () {
+  suggestions.innerHTML = ''
+	searchInput.value = ''
+}
+
+function browserHasRememberedInput () {
+	if (searchInput.value !== '') {
+		displayMatches()
+	}
+}
+
 //    \    |
 //why does my keyboard not have a backslash or vertical bar ? :(
 
 const addComma = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 function displayMatches () {
-  const matchArr = search (this.value, cities)
+	const value = searchInput.value
+  const matchArr = search(value, cities)
   const html = matchArr.map(each => {
-    const regex = RegExp(this.value, 'gi')
-    const cityName = each.city.replace(regex, `<span class="hl">${this.value}</span>`)
-    const stateName = each.state.replace(regex, `<span class="hl">${this.value}</span>`)
+    const regex = RegExp(value, 'gi')
+    const cityName = each.city.replace(regex, `<span class="hl">${value}</span>`)
+    const stateName = each.state.replace(regex, `<span class="hl">${value}</span>`)
     return `
       <li>
         <span class="name">${cityName}, ${stateName}</span>
@@ -37,10 +54,10 @@ function displayMatches () {
   suggestions.innerHTML = html
 }
 
-const searchInput = document.querySelector('.search')
-const suggestions = document.querySelector('.suggestions')
-
 searchInput.addEventListener('change', displayMatches)
 searchInput.addEventListener('keyup', displayMatches)
+clear.onclick = clearSearch
 
-setTimeout(() => console.log(search('bos', cities)), 1000)
+// setTimeout(() => console.log(search('bos', cities)), 1000)
+
+// document.addEventListener('DOMContentLoaded', browserHasRememberedInput)

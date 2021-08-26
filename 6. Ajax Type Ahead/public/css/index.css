@@ -35,9 +35,14 @@ input {
 
 }
 
-.suggestions {
-
+input:focus, input:focus-visible, input:focus-within {
+	outline-color: #1db3ee;
+	border-color: #1db3ee;
 }
+
+/* .suggestions {
+
+} */
 
 li {
   width: 400px;
@@ -49,6 +54,35 @@ li {
   border-bottom: 1px solid #ecf0f1;
 }
 
-li span {
+/* li span {
 
+} */
+
+.controls {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+}
+
+.search-clear {
+	cursor: pointer;
+	padding: 10px 20px;
+	background: none;
+  border: 2px solid #bec3c7;
+  border-radius: 20px;
+	transition: .2s linear;
+	font-size: 18px;
+	color: #555758;
+}
+
+.search-clear:hover {
+	background: #ecf0f1;
+	border-color: #bec3c7;
+	color: black;
+}
+
+.search-clear:active {
+	background: #bec3c7;
+	border-color: #1db3ee;
+	outline: 2px solid #1db3ee;
 }
