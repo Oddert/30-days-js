@@ -54,3 +54,12 @@ p {
 .opp {
   color: #56b6c2;
 }
+
+
+.console-notice {
+	background: #444444;
+	border-left: 10px solid #2C8660;
+	color: #fff;
+	padding: 20px 40px;
+	margin: 0;
+}
