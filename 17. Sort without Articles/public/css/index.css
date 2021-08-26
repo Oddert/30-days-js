@@ -47,6 +47,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+	flex-direction: column;
 }
 .input {
   background: #9a59b5;
