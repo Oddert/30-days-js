@@ -6,8 +6,13 @@ const checkBoxes  = document.querySelectorAll('input[type=checkbox]')
 const checkAll    = document.querySelector('.checkAll')
 const unCheckAll  = document.querySelector('.unCheckAll')
 const clear       = document.querySelector('.clear')
+const refresh			= document.querySelector('.refresh')
 
 let items = JSON.parse(localStorage.getItem('items')) || []
+
+function refreshPage () {
+	window.location.refreshPage()
+}
 
 function addItem (e) {
   e.preventDefault()
@@ -78,3 +83,6 @@ const localStoreItems = JSON.parse(localStorage.getItem('items')) || []
 console.log(localStoreItems)
 populateList (localStoreItems, list)
 document.querySelector('.title').innerHTML = 'Tapas Menu'
+
+
+refresh.onclick = refreshPage

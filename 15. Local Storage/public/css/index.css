@@ -137,7 +137,7 @@ li input[type=checkbox]:checked + label {
 }
 
 
-.control button {
+.control button, .refresh {
   background: #ecf0f1;
   color: #2d3e50;
   border: 2px solid #ecf0f1;
@@ -150,11 +150,13 @@ li input[type=checkbox]:checked + label {
   box-shadow: 0px -3px 2px rgba(49, 59, 68, .8), 1px 2px 2px rgba(182, 192, 200, .4);
 }
 
-.control button:hover {
+.control button:hover,
+.refresh:hover {
   background-color: #bec3c7;
   border: 2px solid #bec3c7;
 }
-.control button:active {
+.control button:active,
+.refresh:active {
   border: 2px solid #bec3c7;
 }
 
