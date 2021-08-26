@@ -20,6 +20,8 @@ h1 {
 
 .title {
   font-family: lobster, arial, monospace, sans-serif;
+	color: #fff;
+	margin: 40px 0;
 }
 
 .input {
@@ -48,4 +50,8 @@ h1 {
 
 .multiHover {
   background: #ecf0f1;
+}
+
+.instruction {
+	color: #fff;
 }
