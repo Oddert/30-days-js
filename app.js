@@ -19,7 +19,7 @@ let projects = [
   , { title: '8. HTML Canvas', workToDo: false, thumbnail: '8. Canvas.PNG' }
   , { title: '9. Dev Tools Tips', workToDo: false, thumbnail: '9. Console Dev Tools Tricks.PNG' }
   , { title: '10. Shift to Check Inputs', workToDo: false, thumbnail: '10. Shift Multple Checkboxes 2.PNG' }
-  , { title: '11. HTML Video Player', workToDo: false, thumbnail: '11. HTML Video Player.PNG' }
+  , { title: '11. HTML Video Player Custom Interface', workToDo: false, thumbnail: '11. HTML Video Player.PNG' }
   , { title: '12. Key Sequence Detection', workToDo: false, thumbnail: '12. Key Sequence Detection.PNG' }
   , { title: '13. Slide in on Scroll', workToDo: false, thumbnail: '13. Image Slide In.PNG' }
   , { title: '14. Array Mutability', workToDo: false, thumbnail: '14. Array Mutability.PNG' }

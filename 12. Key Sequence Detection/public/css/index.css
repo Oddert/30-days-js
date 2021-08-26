@@ -27,10 +27,10 @@ h1 {
   justify-content: center;
 }
 
-.display {
-  /* display: inline-block; */
-  /* border: 1px dashed steelblue; */
-}
+/* .display {
+  display: inline-block;
+  border: 1px dashed steelblue;
+} */
 
 .display h1 {
   width: 450px;
