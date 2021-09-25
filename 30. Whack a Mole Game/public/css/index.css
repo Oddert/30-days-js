@@ -3,14 +3,164 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+	overflow-y: auto;
 }
 
 * {
   font-family: helvetica, arial, sans-serif, 'open sans';
+	font-family: 'Indie Flower', 'cursive', helvetica, arial, sans-serif, 'open sans';
+	font-family: 'Architects Daughter', 'cursive', helvetica, arial, sans-serif, 'open sans';
 }
 
-h1 {
+body {
+	background-image: url('/30. Whack a Mole Game/public/img/office-bg-1.png');
+	/* background-image: url('/30. Whack a Mole Game/public/img/office-bg-2.png'); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Indie Flower', 'cursive', helvetica, arial, sans-serif, 'open sans';
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 100px;
+}
+
+.title h1,
+.title h1 span {
   color: tomato;
+	font-size: 46px;
+}
+
+.title-score {
+	font-size: 36px;
+	font-family: 'cursive', helvetica, arial, sans-serif, 'open sans';
+}
+
+.holes_wrapper {
+	display: flex;
+	justify-content: center;
+	/* position: relative; */
+}
+
+.holes_container {
+	width: 60vw;
+	/* height: 80vh; */
+	/* display: flex;
+	flex-direction: column;
+	align-items: center; */
+}
+
+.holes_container--monitor_screen {
+	background: #bec3c7;
+	border-radius: 20px;
+	padding: 50px;
+	position: relative;
+	box-shadow: 0px 6px 20px rgba(0,0,0,.3);
+}
+
+.start-game {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 32px;
+	padding: 20px 50px;
+	background: #27ae61;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.start-game:hover {
+	background: #249756;
+}
+
+.start-game:active {
+	background: #2dcc70;
+}
+
+.holes_container--camera {
+	background: #34495e;
+	height: 30px;
+	width: 30px;
+	border-radius: 15px;
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.holes_container--camera-inner {
+	background: #2d3e50;
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.holes_container--power {
+	background: #b3b7bb;
+	background: #bec3c7;
+	height: 40px;
+	width: 100px;
+	border-radius: 0 0 15px 0;
+	position: absolute;
+	bottom: 0px;
+	right: 0%;
+	box-shadow: inset 3px 3px 0 0 #b3b7bb;
+	box-sizing: border-box;
+	/* transform: translate(-50%, -50%); */
+	cursor: pointer;
+}
+
+.holes_container--power:active {
+	background: #b3b7bb;
+	box-shadow: inset 3px 3px 1px 0 #a1a5a8;
+	transform: scale(95%);
+}
+
+.holes_container--power-inner {
+	background: #e84c3d;
+	height: 10px;
+	width: 10px;
+	border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.holes_container--monitor_bezel {
+	background: #2d3e50;
+	border-radius: 20px;
+	padding: 50px;
+}
+
+.holes_container--neck {
+	width: 15vw;
+	height: 200px;
+	margin: auto;
+	background: #b3b7bb;
+	box-shadow: inset 0px 30px 10px 0 rgba(0,0,0,.1);
+}
+
+.holes_container--base {
+	height: 70px;
+	width: 30vw;
+	margin: auto;
+	background: #bec3c7;
+	border-radius: 30px 30px 0 0;
 }
 
 .holes {
@@ -21,27 +171,127 @@ h1 {
   align-items: center; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+
+	background-image: url('/30. Whack a Mole Game/public/img/curcuit-bg.png');
+	background-image: url('/30. Whack a Mole Game/public/img/curcuit-bg-2.png');
+	background-image: url('/30. Whack a Mole Game/public/img/curcuit-bg-3.png');
+	background-image: url('/30. Whack a Mole Game/public/img/curcuit-bg-4.png');
+	background-image: url('/30. Whack a Mole Game/public/img/curcuit-bg-5.png');
+	/* background-image: url('/30. Whack a Mole Game/public/img/curcuit-bg-6.png'); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .hole {
   position: relative;
   margin: 0px auto 100px;
-  width: 200px;
-  height: 70px;
-  background: #1bbc9b;
+  width: 160px;
+  height: 160px;
+  /* background: #1bbc9b; */
   overflow: hidden;
   /* margin-bottom: 50px; */
 }
 
 .mole {
   position: absolute;
-  background: tomato;
+  /* background: tomato; */
   top: 100%;
   width: 100%;
   height: 100%;
-  transition: .4s;
+  transition: .3s linear;
+	cursor: pointer;
 }
 
 .hole.up .mole {
   top: 0;
+}
+
+.hole.ouch .mole {
+	background: red;
+	transition: .2s;
+	filter: hue-rotate(120deg);
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
+.instructions--container {
+	position: absolute;
+	top: 0px;
+	left: 0%;
+	font-size: 1.2rem;
+	width: 100vw;
+	height: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background: rgba(255,255,255,.3);
+	box-sizing: border-box;
+	display: none;
+}
+
+.instructions {
+	background-image: url('/30. Whack a Mole Game/public/img/notepad-bg.jpg');
+	background-repeat: repeat-y;
+	background-size: cover;
+	width: 40vw;
+	padding: 80px 150px;
+	margin: 50px 0;
+	box-shadow: 0px 10px 30px 10px rgba(0,0,0,.3);
+	position: relative;
+}
+
+.instructions h2 {
+	font-size: 2.5rem;
+}
+
+.instructions-close {
+	position: absolute;
+	top: 50px;
+	right: 80px;
+	font-size: 24px;
+	background: none;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 20px;
+	transition: .2s;
+	color: #34495e;
+}
+
+.instructions-close:hover {
+	text-decoration: underline;
+}
+
+.instructions-close:active {
+	background: rgba(190, 195, 199, .5);
+}
+
+.open-instructions {
+	/* width: 200px; */
+	height: 200px;
+	position: absolute;
+	bottom: 30px;
+	left: 100px;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+.open-instructions img {
+	max-width: 100%;
+	max-height: 100%;
+	box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+}
+
+.open-instructions span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 36px;
 }

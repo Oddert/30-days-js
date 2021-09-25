@@ -1,18 +1,29 @@
 
+const minAppearTime = 1500
+const maxAppearTime = 2000
+const gameTime = 10000
 
-const holes       = document.querySelectorAll('.hole')
-const moles       = document.querySelectorAll('.mole')
-const score       = document.querySelector('.score')
-const gameButton  = document.querySelector('.start-game')
+
+const holeContainer   = document.querySelector('.holes')
+const holes       		= document.querySelectorAll('.hole')
+const moles       		= document.querySelectorAll('.mole')
+const score       		= document.querySelector('.score')
+const gameButton  		= document.querySelector('.start-game')
+const power 					= document.querySelector('.holes_container--power')
+const powerIndicator	= document.querySelector('.holes_container--power-inner')
+const instructionsContainer = document.querySelector('.instructions--container')
+const instructionClose = document.querySelector('.instructions-close')
+const instructionOpen = document.querySelector('.open-instructions')
 
 const randomTime = (min, max) => Math.round(Math.random() * (max-min) + min)
 
+let lockout = false
 let lastHole
 let gameOver = false
 let points = 0
 
 function randomHole (holes) {
-  const idx = Math.floor(Math.random()* holes.length)
+  const idx = Math.floor(Math.random() * holes.length)
   const hole = holes[idx]
   if (hole === lastHole) return randomHole (holes)
   lastHole = hole
@@ -20,7 +31,7 @@ function randomHole (holes) {
 }
 
 function appear () {
-  const time = randomTime (200, 1000)
+  const time = randomTime (minAppearTime, maxAppearTime)
   const hole = randomHole(holes)
   hole.classList.add('up')
   setTimeout(() => {
@@ -29,21 +40,89 @@ function appear () {
   }, time)
 }
 
+function handleStartClick () {
+	// do a count down
+	gameButton.style.display = 'none'
+	startGame()
+}
+
 function startGame () {
+	if (lockout) return
   score.textContent = '0'
   gameOver = false
   points = 0
   appear()
-  setTimeout(() => gameOver = true, 10000)
+  setTimeout(endGame, gameTime)
+}
+
+function endGame () {
+	gameOver = true
+	setTimeout(() => {
+		gameButton.style.display = null
+	}, maxAppearTime)
 }
 
 function hit (e) {
   if (!e.isTrusted) return
   points ++
-  this.classList.remove('up')
+	const hole = this.closest('.hole')
+	hole.classList.add('ouch')
+	setTimeout(() => hole.classList.remove('ouch'), 100)
+  hole.classList.remove('up')
   score.textContent = points
 }
 
+/**
+ * Toggles the lockout variable. 
+ * Will toggle between true and false unless prefernce is used to specifically set the state.
+ * 
+ * @param {boolean} preference (optional) boolean state to set lockout to
+ */
+function toggleLockout (preference) {
 
-gameButton.addEventListener('click', startGame)
+	const shutdown = () => {
+		lockout = true
+		gameOver = true
+		holeContainer.style.backgroundImage = 'url("")'
+		holeContainer.style.backgroundColor = 'black'
+		powerIndicator.style.backgroundColor = '#c1392b'
+		gameButton.style.display = 'none'
+	}
+	const startup = () => {
+		lockout = false
+		gameOver = false
+		points = 0
+		lastHole = undefined
+		holeContainer.style.backgroundImage = null
+		holeContainer.style.backgroundColor = null
+		powerIndicator.style.backgroundColor = null
+		gameButton.style.display = null
+	}
+
+	if (preference === true) {
+		startup()
+	} else if (preference === false) {
+		shutdown()
+	} else if (lockout === true) {
+		startup()
+	} else if (lockout === false) {
+		shutdown()
+	}
+}
+
+function closeInstructions () {
+	instructionsContainer.style.display = 'none'
+	instructionOpen.style.opacity = '1'
+}
+
+function openInstructions () {
+	instructionsContainer.style.display = 'flex'
+	instructionOpen.style.opacity = '0'
+}
+
+
+gameButton.addEventListener('click', handleStartClick)
 moles.forEach(each => each.addEventListener('click', hit))
+power.addEventListener('click', () => toggleLockout())
+instructionClose.onclick = closeInstructions
+instructionOpen.onclick = openInstructions
