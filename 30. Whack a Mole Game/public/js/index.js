@@ -58,7 +58,7 @@ function startGame () {
 function endGame () {
 	gameOver = true
 	setTimeout(() => {
-		gameButton.style.display = null
+		if (!lockout) gameButton.style.display = null
 	}, maxAppearTime)
 }
 
