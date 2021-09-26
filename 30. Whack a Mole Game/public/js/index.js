@@ -1,19 +1,27 @@
 
-const minAppearTime = 1500
-const maxAppearTime = 2000
+const difficultyLevels = [
+	{ min: 1500, max: 2000 },
+	{ min: 1250, max: 1750 },
+	{ min: 1000, max: 1250 },
+	{ min: 450, max: 1000 },
+	{ min: 300, max: 750 },
+]
+
+const startingDifficulty = 2
 const gameTime = 10000
 
 
-const holeContainer   = document.querySelector('.holes')
-const holes       		= document.querySelectorAll('.hole')
-const moles       		= document.querySelectorAll('.mole')
-const score       		= document.querySelector('.score')
-const gameButton  		= document.querySelector('.start-game')
-const power 					= document.querySelector('.holes_container--power')
-const powerIndicator	= document.querySelector('.holes_container--power-inner')
+const holeContainer   			= document.querySelector('.holes')
+const holes       					= document.querySelectorAll('.hole')
+const moles       					= document.querySelectorAll('.mole')
+const score       					= document.querySelector('.score')
+const gameButton  					= document.querySelector('.start-game')
+const power 								= document.querySelector('.holes_container--power')
+const powerIndicator				= document.querySelector('.holes_container--power-inner')
 const instructionsContainer = document.querySelector('.instructions--container')
-const instructionClose = document.querySelector('.instructions-close')
-const instructionOpen = document.querySelector('.open-instructions')
+const instructionClose 			= document.querySelector('.instructions-close')
+const instructionOpen 			= document.querySelector('.open-instructions')
+const difficultySelector 		= document.querySelector('.difficulty_selector')
 
 const randomTime = (min, max) => Math.round(Math.random() * (max-min) + min)
 
@@ -21,6 +29,10 @@ let lockout = false
 let lastHole
 let gameOver = false
 let points = 0
+let difficulty = startingDifficulty
+let minAppearTime = difficultyLevels[startingDifficulty].min
+let maxAppearTime = difficultyLevels[startingDifficulty].max
+
 
 function randomHole (holes) {
   const idx = Math.floor(Math.random() * holes.length)
@@ -120,9 +132,24 @@ function openInstructions () {
 	instructionOpen.style.opacity = '0'
 }
 
+function handleDifficultyChange (e) {
+	const newLevel = e.target.value
+	const diffSet = difficultyLevels[newLevel]
+	minAppearTime = diffSet.min
+	maxAppearTime = diffSet.max
+	difficulty = newLevel
+}
+
 
 gameButton.addEventListener('click', handleStartClick)
 moles.forEach(each => each.addEventListener('click', hit))
 power.addEventListener('click', () => toggleLockout())
 instructionClose.onclick = closeInstructions
 instructionOpen.onclick = openInstructions
+difficultySelector.onchange = handleDifficultyChange
+
+function gameLoaded () {
+	difficultySelector.value = difficulty
+}
+
+document.addEventListener('DOMContentLoaded', gameLoaded)
