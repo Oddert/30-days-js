@@ -122,6 +122,13 @@ function toggleLockout (preference) {
 	}
 }
 
+function handleInstructionsOOB (e) {
+	console.log(e.target.className)
+	if (e.target.className.includes('instructions--container')) {
+		closeInstructions()
+	}
+}
+
 function closeInstructions () {
 	instructionsContainer.style.display = 'none'
 	instructionOpen.style.opacity = '1'
@@ -147,6 +154,7 @@ power.addEventListener('click', () => toggleLockout())
 instructionClose.onclick = closeInstructions
 instructionOpen.onclick = openInstructions
 difficultySelector.onchange = handleDifficultyChange
+instructionsContainer.addEventListener('click', handleInstructionsOOB)
 
 function gameLoaded () {
 	difficultySelector.value = difficulty
