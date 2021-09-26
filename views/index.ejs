@@ -12,17 +12,19 @@
   <body>
     <div class="project-container">
       <% projects.forEach(each => { %>
-        <ul class="project">
-          <a href="/<%= each.title %>">
-            <%= each.title %>
-            <% if (each.workToDo) { %>
-              (still work to do)
-            <% } %>
-          </a>
-          <% if (each.thumbnail) { %>
-            <img src="./screenshots/<%= each.thumbnail %>" alt="<%= each.title %> thumbnail" class="thumbnail" />
-          <% } %>
-        </ul>
+				<a href="/<%= each.title %>">
+        	<ul class="project">
+          	<p>
+            	Day <%= each.title %>
+            	<% if (each.workToDo) { %>
+             		(still work to do)
+            	<% } %>
+						</p>
+						<% if (each.thumbnail) { %>
+								<img src="./screenshots/<%= each.thumbnail %>" alt="<%= each.title %> thumbnail" class="thumbnail" />
+						<% } %>
+        	</ul>
+				</a>
       <% }) %>
     </div>
   </body>

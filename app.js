@@ -38,7 +38,7 @@ let projects = [
   , { title: '27. Click Drag', workToDo: false, thumbnail: null }
   , { title: '28. Video Speed Interface', workToDo: true, thumbnail: null }
   , { title: '29. Countdown Timer', workToDo: true, thumbnail: null }
-  , { title: '30. Whack a Mole Game', workToDo: true, thumbnail: '30. Whack a Mole Game.PNG' }
+  , { title: '30. Whack a Mole Game', workToDo: false, thumbnail: '30. Whack a Mole Game 2.PNG' }
 ]
 
 app.get('/', (req, res) =>

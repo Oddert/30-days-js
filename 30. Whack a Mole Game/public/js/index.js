@@ -4,7 +4,7 @@ const difficultyLevels = [
 	{ min: 1250, max: 1750 },
 	{ min: 1000, max: 1250 },
 	{ min: 450, max: 1000 },
-	{ min: 300, max: 750 },
+	{ min: 250, max: 750 },
 ]
 
 const startingDifficulty = 2
