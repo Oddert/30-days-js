@@ -19,7 +19,7 @@ function setCircleVal (percent) {
 
 
 let countdown
-let twelveHourTime = true
+let twelveHourTime = false
 
 function timer (secs) {
   clearInterval(countdown)

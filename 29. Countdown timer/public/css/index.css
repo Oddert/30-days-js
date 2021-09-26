@@ -34,23 +34,27 @@ h1 {
   flex-wrap: wrap;
 }
 
-.timer__controls > * {
-  /* flex: 1; */
-}
+/* .timer__controls > * {
+  flex: 1;
+} */
 
 .timer__controls-buttons {
   display: flex;
   flex: 1;
 }
 
-.timer__controls-buttons > * {
+.timer__controls-buttons .timer__button {
+	padding: 10px 20px;
+}
+
+/* .timer__controls-buttons > * {
   flex: 1;
   display: flex;
-}
+} */
 
 
 .display__time {
-  border: 1px dashed steelblue;
+  /* border: 1px dashed steelblue; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +64,7 @@ h1 {
 }
 
 .display__time-inner {
-  border: 1px solid steelblue;
+  /* border: 1px solid steelblue; */
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -81,7 +85,7 @@ h1 {
 
 .ring {
   position: absolute;
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
   top: 50%;
   transform: translateY(-50%);
 }
