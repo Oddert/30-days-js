@@ -10,28 +10,45 @@
     <div class="timer">
       <div class="timer__controls">
         <div class="timer__controls-buttons">
-          <button data-time="20" class="timer__button">20 Secs</button>
-          <button data-time="300" class="timer__button">Work 5 Mins</button>
-          <button data-time="1800" class="timer__button">Work 30 Mins</button>
-          <button data-time="3600" class="timer__button">Work 60 Mins</button>
-          <button data-time="900" class="timer__button">Quick 15 Min Break</button>
-          <button data-time="1200" class="timer__button">Snack 20 Mins</button>
-          <button data-time="3600" class="timer__button">Lunch</button>
+          <button data-time="5" data-title="quick 5 seconds" class="timer__button">5 Secs</button>
+          <button data-time="20" data-title="quick 20 seconds" class="timer__button">20 Secs</button>
+          <button data-time="60" data-title="one minuite" class="timer__button">1 Min</button>
+          <button data-time="300" data-title="Work 5 mins" class="timer__button">Work 5 Mins</button>
+          <button data-time="1800" data-title="Work 30 mins" class="timer__button">Work 30 Mins</button>
+          <button data-time="3600" data-title="Work 1 hour" class="timer__button">Work 60 Mins</button>
+          <button data-time="900" data-title="15 min break" class="timer__button">15 Min Break</button>
+          <button data-time="1200" data-title="Snack 20 mins" class="timer__button">Snack 20 Mins</button>
+          <button data-time="3600" data-title="Lunch" class="timer__button">Lunch</button>
         </div>
         <form name="customForm" id="custom__time">
-          <input type="text" name="minutes" placeholder="Enter Minutes">
+					<label for="customForm__minutes">Custom time: </label>
+          <input type="text" id="customForm__minutes" name="minutes" placeholder="Enter Minutes">
+					<input type="submit" value="add" />
         </form>
         <button class="timer__toggleTwelveHour">24 Hour</button>
+				<div class="timer__controls-autoplay">
+					<label for="toggle__autoplay-checkbox" class="toggle__autoplay-checkbox__label">Autoplay</label>
+					<label class="toggle" for="toggle__autoplay-checkbox">
+						<input type="checkbox" id="toggle__autoplay-checkbox" checked />
+						<span></span>
+					</label>
+				</div>
       </div>
       <div class="display__time">
         <svg class="ring" height="350" width="350">
           <circle class="ring__circle" r="155" cx="175" cy="175"></circle>
         </svg>
         <div class="display__time-inner">
-          <h1 class="display__time-left"></h1>
-          <p class="display__end-time"></p>
+          <h1 class="display__time-left">00:00</h1>
+          <p class="display__end-time">Select time blocks to get started</p>
         </div>
       </div>
+			<h2 class="timeblock__title"></h2>
+			<div class="queue--container">
+				<ul class="queue">
+
+				</ul>
+			</div>
     </div>
   </body>
   <script type="text/javascript" src='/29. Countdown timer/public/js/index.js'></script>
