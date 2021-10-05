@@ -160,7 +160,7 @@ function displayEndTime (secs) {
 
 function toggleFormat () {
   twelveHourTime = !twelveHourTime
-  toggleTwelveHour.textContent = `${twelveHourTime ? '12' : '24'} Hour`
+  toggleTwelveHour.textContent = `${twelveHourTime ? '12' : '24'} Hour Time`
 }
 
 /**
@@ -212,13 +212,18 @@ function createQueueListItem (title, formatedTime, id) {
 	const deleteElem = document.createElement('button')
 
 	const bumpButtonsElem = document.createElement('div')
+	bumpButtonsElem.className = 'queue__listitem-position_buttons'
 
 	const bumpUpElem = document.createElement('button')
 	bumpUpElem.textContent = '▲'
+	bumpUpElem.className = 'queue__listitem-position_buttons--bump_up'
+	bumpUpElem.title = 'move item up queue'
 	bumpUpElem.onclick = bumpItemUp
 
 	const bumpDownElem = document.createElement('button')
 	bumpDownElem.textContent = '▼'
+	bumpUpElem.className = 'queue__listitem-position_buttons--bump_down'
+	bumpUpElem.title = 'move item down queue'
 	bumpDownElem.onclick = bumpItemDown
 
 	bumpButtonsElem.appendChild(bumpUpElem)
@@ -232,7 +237,8 @@ function createQueueListItem (title, formatedTime, id) {
 	// timeElem.textContent = `${formatedStartTime} - ${formatedEndTime}`
 	timeElem.textContent = formatedTime
 	deleteElem.className = 'queue__listitem-delete'
-	deleteElem.textContent = 'delete'
+	deleteElem.textContent = '✖'
+	deleteElem.title = 'remove this item from the queue'
 	deleteElem.onclick = handleDeleteQueueItem
 
 	queueListItem.appendChild(draggableElem)
@@ -269,6 +275,7 @@ function handleFormSubmit (e) {
 	console.log(mins)
   const title = "Custom Timer"
   if (typeof mins == 'number') {
+		if (mins <= 0) return
 		enqueueTimeBlock(mins * 60, title)
 		conditionalTimerPrompt()
   } else {
