@@ -233,3 +233,4 @@ dist
 .pnp.*
 
 *.temp*
+*.xcf
