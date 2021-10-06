@@ -13,7 +13,7 @@ let projects = [
   , { title: '2. CSS Clock', workToDo: false, thumbnail: '2. Clock.PNG' }
   , { title: '3. CSS Variables', workToDo: false, thumbnail: '3. CSS Variables.PNG' }
   , { title: '4. Array Cardio Day 1', workToDo: false, thumbnail: '4. Array Cardio 2.PNG' }
-  , { title: '5. Flex Panels Image Gallery', workToDo: true, thumbnail: '5. Flex Image Gallery.PNG' }
+  , { title: '5. Flex Panels Image Gallery', workToDo: false, thumbnail: '5. Flex Image Gallery.PNG' }
   , { title: '6. Ajax Type Ahead', workToDo: false, thumbnail: '6. Ajax Type Ahead2.PNG' }
   , { title: '7. Array Cardio Second', workToDo: false, thumbnail: '7. Array Cardio Second Session.PNG' }
   , { title: '8. HTML Canvas', workToDo: false, thumbnail: '8. Canvas.PNG' }
@@ -37,7 +37,7 @@ let projects = [
   , { title: '26. Stripe Dropdown Example', workToDo: true, thumbnail: '26. Stripe Dropdown Example.PNG' }
   , { title: '27. Click Drag', workToDo: false, thumbnail: null }
   , { title: '28. Video Speed Interface', workToDo: true, thumbnail: null }
-  , { title: '29. Countdown Timer', workToDo: true, thumbnail: null }
+  , { title: '29. Countdown Timer', workToDo: false, thumbnail: '29. Countdown Timer.PNG' }
   , { title: '30. Whack a Mole Game', workToDo: false, thumbnail: '30. Whack a Mole Game 2.PNG' }
 ]
 
