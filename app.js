@@ -36,7 +36,7 @@ let projects = [
   , { title: '25. Event Contexts', workToDo: true, thumbnail: null }
   , { title: '26. Stripe Dropdown Example', workToDo: true, thumbnail: '26. Stripe Dropdown Example.PNG' }
   , { title: '27. Click Drag', workToDo: false, thumbnail: null }
-  , { title: '28. Video Speed Interface', workToDo: true, thumbnail: null }
+  , { title: '28. Video Speed Interface', workToDo: false, thumbnail: '28. Video Speed Interface.PNG' }
   , { title: '29. Countdown Timer', workToDo: false, thumbnail: '29. Countdown Timer.PNG' }
   , { title: '30. Whack a Mole Game', workToDo: false, thumbnail: '30. Whack a Mole Game 2.PNG' }
 ]
