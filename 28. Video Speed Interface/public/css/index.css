@@ -1,12 +1,28 @@
 
+:root {
+	--controler-height: 250px;
+}
+
+* {
+	font-family: helvetica, arial, sans-serif, 'open sans';
+}
+
 body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-* {
-  font-family: helvetica, arial, sans-serif, 'open sans';
+body {
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh; */
+	background-image: url('/28. Video Speed Interface/public/img/ambient-bg-1.png');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
@@ -19,6 +35,7 @@ h1 {
   justify-content: center;
   position: relative;
   width: 100vw;
+	margin-top: 20vh;
 }
 
 video {
@@ -26,10 +43,29 @@ video {
 }
 
 .speed {
-  width: 100px;
-  height: 250px;
+  width: 200px;
+  height: var(--controler-height);
   margin: 50px;
-  background: tomato;
+  background: #222;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	cursor: pointer;
+	clip-path: polygon(0% 0%, 30% 100%, 70% 100%, 100% 0%);
+}
+
+/* .speed-readout {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(-50%);
+} */
+
+.speed.locked {
+	filter: grayscale(.45);
+}
+.speed.locked:hover {
+	filter: grayscale(.3);
 }
 
 .speed-bar {
@@ -37,4 +73,9 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+	height: calc(var(--controler-height) * .17);
+
+	background: linear-gradient(148.56672640047123deg, rgba(243, 72, 104,1) 5.458115183246074%,rgba(242, 71, 104,1) 5.458115183246074%,rgba(158, 0, 236,1) 70.90314136125653%)
+
+
 }
