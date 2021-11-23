@@ -1,12 +1,27 @@
 
+:root {
+	--border-radius: 10px;
+	/* --text-bg-colour: #222; */
+	--text-colour: #ecf0f1;
+	--text-dark: #bec3c7;
+	--text-bg-colour: black;
+}
+
 body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+body {
+	background: linear-gradient(45deg, #111 0%, #444 100%);
 }
 
 * {
-  font-family: helvetica, arial, sans-serif, 'open sans';
+  font-family: 'Roboto', 'open sans', 'roboto', helvetica, arial, sans-serif;
+	letter-spacing: 2px;
+	font-weight: 300;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -47,10 +62,31 @@ h1 {
   width: 100vw;
   overflow-x: auto;
   overflow-y: hidden;
+	/* border: 1px dashed tomato; */
+	box-shadow: 
+		inset 0px 10px 10px rgba(0,0,0,.3), 
+		inset 0px -10px 10px rgba(0,0,0,.3);
+		-ms-overflow-style: none;
+		scrollbar-width: none; 
+}
+
+
+.items::-webkit-scrollbar {
+	display: none;
+}
+
+.items.active .article {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: auto;
 }
 
 .item {
-  /* width: 200px; */
+  width: 200px;
   height:  200px;
   padding: 0px 50px;
   display: flex;
@@ -64,7 +100,64 @@ body {
 	height: 100vh;
 }
 
-article {
+.article {
 	margin: 40px;
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border: 1px solid #2d3e50;
+	border-radius: 10px;
+	position: relative;
+	min-width: 400px;
+	width: 400px !important;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	border-top-color: #ecf0f1;
+	border-bottom-color: #222;
+}
+
+.article .image {
+	height: 300px;
+	width: 100%;
+	/* width: 50px; */
+}
+
+.article .image img {
+	height: 100%;
+	width: 100%;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	object-fit: cover;
+}
+
+.article h3 {
+	margin: 0;
+	padding: 300px 20px 20px;
+	color: var(--text-colour);
+	background: linear-gradient(0deg, var(--text-bg-colour) 0%,rgba(0,0,0,0) 100%);
+	font-size: 20px;
+}
+
+.article p {
+	font-size: 14px;
+	margin: 0;
+}
+
+.article-text {
+	display: flex;
+	flex: 1;
+	padding: 0 20px 20px 20px;
+	color: var(--text-colour);
+	background: var(--text-bg-colour);
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+sub {
+	color: var(--text-dark);
+	text-align: right;
 }
