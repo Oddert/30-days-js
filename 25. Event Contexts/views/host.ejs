@@ -9,10 +9,24 @@
   <body>
     <button class='button_multi' title="this is a standard button event listener tracking clicks">You may click infinately (0)</button>
     <button class='button_once' title="this buttons' event listener uses the 'once' flag to unbind the listener after one click">You may only click once (0)</button>
-    <div class="one">
-      <div class="two">
-        <div class="three">
-
+		<p class='layer__label'>
+			body
+		</p>
+		<button class='captureToggle'>Capture: false</button>
+		<button class='propigateToggle'>Propigate: true</button>
+		<button class='rippler'>Button</button>
+    <div class='layer one'>
+			<p class='layer__label'>
+				one
+			</p>
+      <div class='layer two'>
+				<p class='layer__label'>
+					two
+				</p>
+        <div class='layer three'>
+					<p class='layer__label'>
+						three
+					</p>
         </div>
       </div>
     </div>
