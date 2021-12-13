@@ -4,8 +4,8 @@ let propigate = true
 
 const button_once = document.querySelector('.button_once')
 const button_multi = document.querySelector('.button_multi')
-const capture_toggle = document.querySelector('.captureToggle')
-const propigate_toggle = document.querySelector('.propigateToggle')
+const capture_toggle = document.getElementById('captureControl')
+const propigate_toggle = document.getElementById('propigateControl')
 
 const buttons = document.getElementsByClassName('rippler')
 const layers = document.querySelectorAll('.layer')
@@ -40,15 +40,15 @@ function resetListeners () {
 	}
 }
 
-capture_toggle.onclick = (e) => {
-	capture = !capture
-	capture_toggle.textContent = capture ? 'Capture: true' : 'Capture: false'
+capture_toggle.onchange = (e) => {
+	capture = e.target.checked
+	// capture_toggle.textContent = capture ? 'Capture: true' : 'Capture: false'
 	resetListeners()
 }
 
-propigate_toggle.onclick = (e) => {
-	propigate = !propigate
-	propigate_toggle.textContent = propigate ? 'Propigate: true' : 'Propigate: false'
+propigate_toggle.onchange = (e) => {
+	propigate = e.target.checked
+	// propigate_toggle.textContent = propigate ? 'Propigate: true' : 'Propigate: false'
 	resetListeners()
 }
 
@@ -87,17 +87,33 @@ function createRipple (e) {
 	elem.prepend(circle)
 }
 
+function createButtonRipple (e) {
+	const elem = e.currentTarget
+	const circle = document.createElement('span')
+	const diameter = Math.max(elem.clientWidth, elem.clientHeight)
+	const radius = diameter / 2
+	// console.log(e.clientX, elem.offsetLeft)
+	circle.style.width  = circle.style.height = `${diameter}px`
+	circle.style.left = `${e.clientX - (elem.offsetLeft + radius)}px`
+	circle.style.top = `${e.clientY - (elem.offsetTop + radius)}px`
+	circle.classList.add('buttonRipple')
+	const ripple = elem.getElementsByClassName('buttonRipple')[0]
+	if (ripple) ripple.remove()
+	elem.prepend(circle)
+}
+
 for (const button of buttons) {
-	button.addEventListener('click', createRipple)
+	button.addEventListener('click', createButtonRipple)
 }
 
 // calling stop propigation seems to apply to all evt listeners
 // considder a way to handle the ripple, event propigation and simulated bubble in correct order
 function simulateBubble (e) {
+	console.log({ capture, propigate })
 	console.log('simulateBubble', e.target.className)
 	e.stopPropagation()
 	const delay = 500
-	const offset = 250
+	const offset = 0
 	const layer = e.target.classList.contains('layer') ? e.target : e.target.closest('.layer')
 	const idxMap = {
 		'layer one': 2,
@@ -107,7 +123,11 @@ function simulateBubble (e) {
 	const list = capture ? [...layers] : [...layers].reverse()
 	const filteredList = list.slice(idxMap[e.target.className])
 	console.log(layer, filteredList)
-	filteredList.forEach((each, idx) => directedRipple(each, (idx * delay) + offset, e))
+	if (propigate) {
+		filteredList.forEach((each, idx) => directedRipple(each, (idx * delay) + offset, e))
+	} else {
+		directedRipple(filteredList[0], 0, e)
+	}
 }
 
 function directedRipple (elem, offset = 0, e) {
@@ -139,7 +159,17 @@ function directedRipple (elem, offset = 0, e) {
 	}, offset)
 }
 
-document.addEventListener('DOMContentLoaded', resetListeners)
+function readToggleSwitches () {
+	propigate = propigate_toggle.checked
+	capture = capture_toggle.checked
+}
+
+function documentLoaded () {
+	resetListeners()
+	readToggleSwitches()
+}
+
+document.addEventListener('DOMContentLoaded', documentLoaded)
 
 
 

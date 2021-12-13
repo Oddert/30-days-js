@@ -7,14 +7,44 @@
     <link rel="icon" type="image/png" href="/faveicon.png">
   </head>
   <body>
-    <button class='button_multi' title="this is a standard button event listener tracking clicks">You may click infinately (0)</button>
-    <button class='button_once' title="this buttons' event listener uses the 'once' flag to unbind the listener after one click">You may only click once (0)</button>
+		<div class='controls'>
+			<button 
+				class='button_multi rippler' 
+				title='this is a standard button event listener tracking clicks'
+			>
+				You may click infinately (0)
+			</button>
+			<button
+				class='button_once rippler'
+				title="this buttons' event listener uses the 'once' flag to unbind the listener after one click"
+			>
+				You may only click once (0)
+			</button>
+			<div class='toggle'>
+				<label class='switch'>
+					<input type='checkbox' id='captureControl'>
+					<span class='slider round'></span>
+				</label>
+				<label for='captureControl'>
+					Capture
+				</label>
+			</div>
+			<div class='toggle'>
+				<label class='switch'>
+					<input type='checkbox' id='propigateControl' checked>
+					<span class='slider round'></span>
+				</label>
+				<label for='propigateControl'>
+					Propigate
+				</label>
+			</div>
+			<!-- <button class='captureToggle rippler'>Capture: false</button>
+			<button class='propigateToggle rippler'>Propigate: true</button> -->
+			<!-- <button class='rippler'>Button</button> -->
+		</div>
 		<p class='layer__label'>
 			body
 		</p>
-		<button class='captureToggle'>Capture: false</button>
-		<button class='propigateToggle'>Propigate: true</button>
-		<button class='rippler'>Button</button>
     <div class='layer one'>
 			<p class='layer__label'>
 				one
