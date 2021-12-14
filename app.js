@@ -33,13 +33,19 @@ let projects = [
   , { title: '22. Link Transition Effect', workToDo: false, thumbnail: '22. Link Transition Effect.PNG' }
   , { title: '23. Speech Synthesis', workToDo: true, thumbnail: null }
   , { title: '24. Sticky Nav Bar', workToDo: false, thumbnail: '24. Sticky Nav Bar.PNG' }
-  , { title: '25. Event Contexts', workToDo: true, thumbnail: null }
+  , { title: '25. Event Contexts', workToDo: false, thumbnail: '25. Event Contexts 3.PNG' }
   , { title: '26. Stripe Dropdown Example', workToDo: true, thumbnail: '26. Stripe Dropdown Example.PNG' }
-  , { title: '27. Click Drag', workToDo: false, thumbnail: null }
+  , { title: '27. Click Drag', workToDo: false, thumbnail: '27. Click Drag.png' }
   , { title: '28. Video Speed Interface', workToDo: false, thumbnail: '28. Video Speed Interface.PNG' }
   , { title: '29. Countdown Timer', workToDo: false, thumbnail: '29. Countdown Timer.PNG' }
   , { title: '30. Whack a Mole Game', workToDo: false, thumbnail: '30. Whack a Mole Game 2.PNG' }
 ]
+
+// app.use((req, res, next) => {
+// 	console.log(req.headers)
+// 	return res.status(401).send()
+// })
+
 
 app.get('/', (req, res) =>
   process.env.GLITCH
