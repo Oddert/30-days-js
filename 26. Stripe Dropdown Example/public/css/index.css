@@ -16,7 +16,7 @@ h1 {
 body {
   min-height: 100vh;
   background: linear-gradient(45deg, #c000ff, #00fff2);
-  padding-bottom: 500px;
+  /* padding-bottom: 500px; */
 }
 
 nav {
@@ -24,11 +24,15 @@ nav {
   perspective: 600px;
 }
 
+i {
+	margin-right: 10px;
+}
+
 .cool > li > a {
-  color: yellow;
+  color:#f39c11;
   text-decoration: none;
   font-size: 20px;
-  background: rgba(0,0,0,.2);
+  background: rgba(0,0,0,.4);
   padding: 10px 20px;
   display: inline-block;
   margin: 20px;
@@ -43,10 +47,16 @@ nav ul {
   justify-content: center;
 }
 
+.cool {
+	display: flex;
+	justify-content: center;
+}
+
 .cool > li {
   position: relative;
   display: flex;
   justify-content: center;
+	margin: 0 50px;
 }
 
 .dropdown {
@@ -62,7 +72,11 @@ nav ul {
   display: none;
 }
 
-.trigger-enter .dropdown { display: block; }
+.trigger-enter .dropdown { 
+	display: block;
+	display: flex;
+	flex-direction: column; 
+}
 .trigger-enter-active .dropdown { opacity: 1; }
 
 .dropdownBackground {
@@ -102,8 +116,9 @@ nav ul {
 
 .bio img {
   float: left;
-  margin-left: 20px;
+  margin: 0 20px;
   width: 100px;
+	border-radius: 5px;
 }
 
 .courses {
@@ -114,11 +129,22 @@ nav ul {
   padding: 10px 0;
   display: block;
   border-bottom: 1px solid rgba(0,0,0,.2);
+	display: flex;
+	min-width: max-content;
 }
 
 .dropdown a {
   text-decoration: none;
-  color: #ffc600;
+  color: #f39c11;
+	width: 100%;
+}
+
+a:hover {
+	color: #cc8512;
+}
+
+.dropdown li:hover {
+	background-color: #ecf0f1;
 }
 
 a.button {
@@ -127,4 +153,44 @@ a.button {
   padding: 10px;
   color: #fff;
   margin-bottom: 10px;
+}
+
+.dropdown3 {
+	padding: 20px 0 0;
+}
+
+.dropdown3 li {
+	padding: 10px 20px;
+}
+
+.dropdown3 .primaryLinks {
+	display: flex;
+	flex-direction: column;
+	min-width: max-content;
+}
+
+.dropdown3 .blogList {
+	display: flex;
+	flex-direction: column;
+	min-width: max-content;
+	padding-bottom: 20px;
+	background: #5a96b1;
+}
+
+.dropdown3 .blogList li {
+	padding-left: 40px;
+	font-size: 14px;
+}
+
+.dropdown3 .blogList li:hover {
+	background-color: #5c8ea6;
+}
+
+.dropdown3 .blogList li:first-of-type {
+	padding-left: 20px;
+	font-size: 16px;
+}
+
+.dropdown3 .blogList li a {
+	color: #fff;
 }
