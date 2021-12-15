@@ -1,12 +1,12 @@
 /**
  * Controls wether events should capture
- * @typedef {boolean}
+ * @type {boolean}
  * @global
  */
 let capture = false
 /**
  * Controls wether events should propigate
- * @typedef {boolean}
+ * @type {boolean}
  * @global
  */
 let propigate = true
@@ -26,13 +26,13 @@ const infoClose = document.querySelector('.infoPannel .close button')
 
 /**
  * Counts the number of clicks on the 'multi click' button
- * @typedef {number}
+ * @type {number}
  * @global
  */
 let button_multi_counter = 0
 /**
  * Counts the number of clicks on the 'single click' button
- * @typedef {number}
+ * @type {number}
  * @global
  */
 let button_once_counter = 0
@@ -40,7 +40,7 @@ let button_once_counter = 0
 /**
  * If true, events will be entirely handled by JS.
  * If false, bubbling and capturing will be simulated to slow the animations.
- * @typedef {boolean}
+ * @type {boolean}
  * @global
  * @constant
  */
