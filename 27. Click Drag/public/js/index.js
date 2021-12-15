@@ -64,6 +64,7 @@ articles.forEach((article, idx) => {
 	// 			<img src="${article.img}" alt="">
 	// 		</div>
 	const formatDate = `${articleDate.getDate()} ${months[articleDate.getMonth()]}`
+	articleDate.setDate(articleDate.getDate() - Math.floor(Math.random() * 8))
 	seeds.push(
 		`
 		<div class='article' style='background-image: url("${article.img}");'>
@@ -97,25 +98,25 @@ slider.addEventListener('mousedown', e => {
   slider.classList.add('active')
   startX = e.pageX - slider.offsetLeft
   scrollLeft = slider.scrollLeft
-	console.log('mouseDown', mouseIsDown, startX, scrollLeft)
+	// console.log('mouseDown', mouseIsDown, startX, scrollLeft)
 })
 slider.addEventListener('mouseleave', () => {
   mouseIsDown = false
   slider.classList.remove('active')
-	console.log('mouse leave', mouseIsDown, startX, scrollLeft)
+	// console.log('mouse leave', mouseIsDown, startX, scrollLeft)
 })
 slider.addEventListener('mouseup', () => {
   mouseIsDown = false
   slider.classList.remove('active')
-	console.log('mouse up', mouseIsDown, startX, scrollLeft)
+	// console.log('mouse up', mouseIsDown, startX, scrollLeft)
 })
 slider.addEventListener('mousemove', e => {
-	console.log('mouse move')
+	// console.log('mouse move')
   if (!mouseIsDown) return
   e.preventDefault()
   const x = e.pageX - slider.offsetLeft
   const walk = (x - startX) * 2
 	console.log(x, startX, walk)
   slider.scrollLeft = scrollLeft - walk
-	console.log('mouseDown', mouseIsDown, startX, scrollLeft)
+	// console.log('mouseDown', mouseIsDown, startX, scrollLeft)
 })
