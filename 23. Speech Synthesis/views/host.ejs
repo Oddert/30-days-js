@@ -5,24 +5,37 @@
     <title>Oddert 30 Days of Javascript | Day #23 Native Speech Synthesis</title>
     <link rel="stylesheet" href="/23. Speech Synthesis/public/css/index.css">
     <link rel="icon" type="image/png" href="/faveicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Make Browsers say Pnuk</h1>
-
-    <select id="voices" name="voice">
-      <option value="undefined">-Select a Voice-</option>
-    </select>
-
-    <label for="rate">Rate:</label>
-    <input type="range" name="rate" value="1.5" min="0" max="5" step=".1" />
-
-    <label for="pitch">Pitch:</label>
-    <input type="range" name="pitch" min="0" max="3" step=".1" />
-
-    <textarea name="text">Time to make odd bot say p nuk</textarea>
-    <button id="stop">Stop ■</button>
-    <button id="speak">Speak 	▶</button>
-
+		<div class='topBar'>
+			<h1>Make Browsers Say Rude Words</h1>
+			<div class='left'>
+				<select id="voices" name="voice">
+					<option value="undefined">-Select a Voice-</option>
+				</select>
+			</div>
+			<div class='play-controls'>
+				<button id="stop">■</button>
+				<button id="speak">▶</button>
+			</div>
+			<div class='right'>
+				<div class='slider'>
+					<label for="rate">Rate:</label>
+					<input type="range" name="rate" value="1.5" min="0" max="5" step=".1" />
+				</div>
+				<div class='slider'>
+					<label for="pitch">Pitch:</label>
+					<input type="range" name="pitch" min="0" max="3" step=".1" />
+				</div>
+			</div>
+		</div>
+		<div class='input'>
+			<!-- <textarea name="text">Time to make odd bot say p nuk</textarea> -->
+			<textarea name="text">Or write something else instead, it does more than swears you know...</textarea>
+		</div>
   </body>
   <script type="text/javascript" src='/23. Speech Synthesis/public/js/index.js'></script>
 </html>

@@ -10,7 +10,7 @@ const stopButton = document.querySelector('#stop')
 msg.text = document.querySelector('[name="text"]').value
 
 function populateVoices () {
-  voices = this.getVoices()
+  voices = speechSynthesis.getVoices()
   voicesDropdown.innerHTML = voices
     .map(each =>
       `<option value="${each.name}">${each.name} (${each.lang})</option>`
@@ -39,3 +39,5 @@ voicesDropdown.addEventListener('change', setVoice)
 options.forEach(each => each.addEventListener('change', setOption))
 speakButton.addEventListener('click', toggle)
 stopButton.addEventListener('click', () => toggle(false))
+
+document.addEventListener('DOMContentLoaded', populateVoices)
