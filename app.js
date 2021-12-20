@@ -3,8 +3,11 @@ const express = require('express')
     , bodyParser = require('body-parser')
     , path = require('path')
 
+const morgan = require('morgan')
+
 app.set('view engine', 'ejs')
 
+app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '/')))
 
@@ -26,15 +29,15 @@ let projects = [
   , { title: '15. Local Storage', workToDo: false, thumbnail: '15. Local Storage.PNG' }
   , { title: '16. CSS Mouse Move', workToDo: false, thumbnail: '16. CSS Mouse Move.PNG' }
   , { title: '17. Sort without Articles', workToDo: false, thumbnail: '17. Sort Without Articles.PNG' }
-  , { title: '18. Tally Video Lengths', workToDo: true, thumbnail: null }
+  , { title: '18. Tally Video Lengths', workToDo: false, thumbnail: '18. Tally Video Lengths.png' }
   , { title: '19. Webcam Booth', workToDo: true, thumbnail: 'help.PNG' }
   , { title: '20. Native Speech Recognition', workToDo: true, thumbnail: '20. Native Voice Recognition.PNG' }
   , { title: '21. Geolocation', workToDo: true, thumbnail: null }
-  , { title: '22. Link Transition Effect', workToDo: false, thumbnail: '22. Link Transition Effect.PNG' }
-  , { title: '23. Speech Synthesis', workToDo: true, thumbnail: null }
+  , { title: '22. Link Transition Effect', workToDo: false, thumbnail: '22. Link Transition Effect 2.PNG' }
+  , { title: '23. Speech Synthesis', workToDo: false, thumbnail: '23. Speech Synthesis.PNG' }
   , { title: '24. Sticky Nav Bar', workToDo: false, thumbnail: '24. Sticky Nav Bar.PNG' }
   , { title: '25. Event Contexts', workToDo: false, thumbnail: '25. Event Contexts 3.PNG' }
-  , { title: '26. Stripe Dropdown Example', workToDo: true, thumbnail: '26. Stripe Dropdown Example.PNG' }
+  , { title: '26. Stripe Dropdown Example', workToDo: false, thumbnail: '26. Stripe Dropdown Example 2.PNG' }
   , { title: '27. Click Drag', workToDo: false, thumbnail: '27. Click Drag.png' }
   , { title: '28. Video Speed Interface', workToDo: false, thumbnail: '28. Video Speed Interface.PNG' }
   , { title: '29. Countdown Timer', workToDo: false, thumbnail: '29. Countdown Timer.PNG' }
