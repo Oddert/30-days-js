@@ -7,10 +7,26 @@
     <link rel="icon" type="image/png" href="/faveicon.png">
   </head>
   <body>
-    <h1>Hello World</h1>
-    <div class="videos">
-
-    </div>
+		<div class='columns'>
+			<div class='document__title'>
+				<h1>Video Length Calculator</h1>
+				<p>Each of our "videos" here has a data attribute with its length which looks like this: <code>data-time="07:57"</code> (mins, seconds). This challenge queries them and calculates the total.</p>
+			</div>
+			<div class='output'>
+				<p class='output__text'>
+					Watch Length:
+					<span class='output__data'> 00:00</span>
+				</p>
+			</div>
+			<h2 class='videos__title'>Available Videos</h2>
+			<div class='column videos'>
+				<div class='bg'></div>
+			</div>
+			<h2 class='queue__title'>Queue</h2>
+			<div class='column queue'>
+				<div class='bg'></div>
+			</div>
+		</div>
   </body>
   <script type="text/javascript" src='/18. Tally Video Lengths/public/js/index.js'></script>
 </html>
