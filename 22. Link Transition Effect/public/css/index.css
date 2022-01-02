@@ -53,6 +53,7 @@ a {
 .menu {
   padding: 0;
   display: flex;
+	flex-wrap: wrap;
   justify-content: space-around;
   list-style-type: none;
   margin: 60px 0px;
@@ -63,4 +64,16 @@ a {
   margin: 0 20px;
   color: #222;
   padding: 5px;
+}
+
+@media only screen and (max-width: 1300px) {
+	body {
+		padding: 0 10vw;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	body {
+		padding: 0 5vw;
+	}
 }
