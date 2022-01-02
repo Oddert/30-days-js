@@ -1,8 +1,18 @@
-const arrow = document.querySelector('.arrow')
-const speed = document.querySelector('.speed-value')
+const intro = document.querySelector('.intro')
+const closeButton = document.querySelector('.closeButton')
+const icon = closeButton.querySelector('.fa')
 
-navigator.geolocation.watchPosition(data => {
-  console.log(data)
-  speed.textContent = data.coords.speed
-  arrow.style.transform = `rotate(${data.coords.heading}deg)`
-}, err => console.error(err))
+let open = true
+
+function toggleClose () {
+	console.log('??????')
+	if (open) {
+		intro.classList.add('closed')
+		open = false
+	} else {
+		intro.classList.remove('closed')
+		open = true
+	}
+}
+
+closeButton.onclick = toggleClose

@@ -1,0 +1,178 @@
+:root {
+	--white-light: #ffffff;
+	--white-normal: #ecf0f1;
+	--white-dark: #bec3c7;
+	--blue-lighter: #40C4FF;
+	--blue-light: #00B0FF;
+	--blue-normal: #3181FF;
+	--blue-dark: #3D5AFE;
+	--blue-darker: #2B48EC;
+}
+
+* {
+	box-sizing: border-box;
+	font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+button, a {
+	color: var(--blue-normal);
+	border: 3px solid var(--blue-normal);
+	font-size: 20px;
+	padding: 10px 20px;
+	z-index: 1;
+	/* background: rgba(0,0,0,1); */
+	border-radius: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: .1s linear;
+	margin: 10px 0;
+	background: rgb(0, 0, 0, .8);
+}
+
+button:hover, a:hover {
+	background: var(--blue-normal);
+	color: var(--white-normal);
+}
+
+button:active, a:active {
+	background: var(--blue-dark);
+	border-color: var(--blue-dark);
+}
+
+button.solid, a.solid {
+	background: var(--blue-normal);
+	border-color: var(--blue-normal);
+	color: var(--white-normal);
+}
+
+button.solid:hover, a.solid:hover {
+	background: var(--blue-dark);
+	border-color: var(--blue-dark);
+	color: var(--white-light);
+}
+
+button.solid:active, a.solid:active {
+	background: var(--blue-darker);
+	border-color: var(--blue-darker);
+}
+
+.intro {
+	grid-column: 1 / -1;
+	grid-row: 1;
+	/* background: linear-gradient(90deg, #EAD8F5 0%, #BCD5E1 100%);
+	background: #D7462C;
+	background: -webkit-linear-gradient(top left, #D7462C, #BB691C);
+	background: -moz-linear-gradient(top left, #D7462C, #BB691C);
+	background: linear-gradient(to bottom right, #D7462C, #BB691C); */
+	background: #ecf0f1;
+	box-shadow: 0 10px 10px rgba(0,0,0,.3);
+	background: #722CF5;
+	background: -webkit-linear-gradient(top left, #722CF5, #57ED7F);
+	background: -moz-linear-gradient(top left, #722CF5, #57ED7F);
+	background: linear-gradient(to bottom right, #722CF5, #57ED7F);
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.intro > * {
+	padding: 10px 20px;
+}
+
+.intro .closeButton i.openIcon {
+	display: none;
+}
+.intro .closeButton i.closeIcon {
+	display: block;
+}
+
+.intro.closed div {
+	display: none;
+}
+
+.intro.closed h1 {
+	margin: 20px 20px;
+	padding: 0;
+}
+
+.intro.closed .closeButton i.openIcon {
+	display: block;
+}
+.intro.closed .closeButton i.closeIcon {
+	display: none;
+}
+
+.closeButton {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border: none;
+	background: none;
+	color: #fff;
+}
+
+.closeButton:hover {
+	background: var(--white-normal);
+	color: #2d3e50;
+}
+
+.closeButton:active {
+	background: var(--white-dark);
+}
+
+.card {
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	transition: .1s linear;
+}
+
+.card:hover {
+	transform: scaleX(1.01);
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.8);
+	transition: .1s linear;
+}
+
+.card:hover .bg {
+	background: rgba(0,0,0,.4);
+}
+
+.original-app {
+	grid-row: 2;
+	grid-column: 1;
+	background-image: url('/21. Geolocation/public/img/original-app.png');
+}
+
+.desktop-app {
+	grid-row: 2;
+	grid-column: 2;
+	background-image: url('/21. Geolocation/public/img/desktop-app.png');
+}
