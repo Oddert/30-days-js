@@ -17,7 +17,7 @@ const osm = L.tileLayer(
 	}
 ).addTo(map);
 
-let marker// = L.marker([57.188221, -3.829367]).addTo(map)
+let marker = L.marker([57.188221, -3.829367]).addTo(map)
 
 /**
  * Callback for the location watch API.
@@ -26,12 +26,14 @@ let marker// = L.marker([57.188221, -3.829367]).addTo(map)
  */
 function handleLocationUpdate (data) {
 	console.log(data.coords)
-	console.log(marker)
-	marker.remove()
-	marker.setLatLng([data.coords.latitude, data.coords.longitude])
-		.addTo(map)
-		.bindPopup(`You are here! <br /> Last updated ${new Date().toLocaleTimeString()}`)
-		.openPopup()
+	if (marker) {
+		console.log(marker)
+		marker.remove()
+		marker.setLatLng([data.coords.latitude, data.coords.longitude])
+			.addTo(map)
+			.bindPopup(`You are here! <br /> Last updated ${new Date().toLocaleTimeString()}`)
+			.openPopup()
+	}
 }
 
 // Assign the callback
