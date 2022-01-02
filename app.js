@@ -32,7 +32,7 @@ let projects = [
   , { title: '18. Tally Video Lengths', workToDo: false, thumbnail: '18. Tally Video Lengths.png' }
   , { title: '19. Webcam Booth', workToDo: true, thumbnail: 'help.PNG' }
   , { title: '20. Native Speech Recognition', workToDo: true, thumbnail: '20. Native Voice Recognition.PNG' }
-  , { title: '21. Geolocation', workToDo: true, thumbnail: null }
+  , { title: '21. Geolocation', workToDo: true, thumbnail: '21. Geolocation.png' }
   , { title: '22. Link Transition Effect', workToDo: false, thumbnail: '22. Link Transition Effect 2.PNG' }
   , { title: '23. Speech Synthesis', workToDo: false, thumbnail: '23. Speech Synthesis.PNG' }
   , { title: '24. Sticky Nav Bar', workToDo: false, thumbnail: '24. Sticky Nav Bar.PNG' }
@@ -56,8 +56,8 @@ app.get('/', (req, res) =>
     : res.render('index', { projects })
 )
 
-app.get('/*', (req, res) =>
-  res.render(path.join(
+app.get('/*', (req, res) => 
+	res.render(path.join(
     __dirname
     , `./${req.params['0']}views/host.ejs`
   ))

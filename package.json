@@ -6,13 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "docs": "jsdoc -c jsdoc.conf.json -R README.md -r"
   },
-  "author": "Robyn Veitch",
+  "author": "Robyn Felicity HeatherVeitch",
   "license": "MIT",
   "dependencies": {
+    "better-docs": "^2.3.2",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.7"
   }
 }
