@@ -4,8 +4,11 @@ const icon = closeButton.querySelector('.fa')
 
 let open = true
 
+/**
+ * Toggles the description bar to give more space to the app selectors.
+ * Removes the .closed class to the container.
+ */
 function toggleClose () {
-	console.log('??????')
 	if (open) {
 		intro.classList.add('closed')
 		open = false
