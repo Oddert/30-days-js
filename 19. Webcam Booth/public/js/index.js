@@ -1,3 +1,8 @@
+navigator.mediaDevices.getUserMedia = 
+	navigator.mediaDevices.getUserMedia ||
+	navigator.webkitGetUserMedia ||
+	navigator.mozGetUserMedia;
+
 const video         = document.querySelector('.player')
 const canvas        = document.querySelector('.photo')
 const ctx           = canvas.getContext('2d')
@@ -5,12 +10,16 @@ const strip         = document.querySelector('.strip')
 const snap          = document.querySelector('.snap')
 const photobutton   = document.querySelector('.photobutton')
 const togglehide    = document.querySelector('.toggle_hide')
+const restartCamera = document.querySelector('.camera_restart')
 
 const videoList     = document.querySelector('.videoList')
 
 let inputOptions    = document.querySelectorAll('.input_option') || []
 
 const filterButtons = document.querySelector('.filters')
+
+let stream
+let paintInterval
 
 
 // ========== Filter Controls ==========
@@ -20,10 +29,11 @@ const green_screen_control    = document.querySelector('.green_screen_controls')
 // ========== Filter Controls ==========
 
 
-function handleError (err) {
-  console.error('Error:', err)
+function handleError (...err) {
+  console.error('Error: ')
+	console.error(...err)
   let errorBox = document.querySelector('.error')
-  errorBox.innerHTML = err
+  errorBox.innerHTML = err + '<br /> If you are experiencing this after a page refresh you may have to close the window and reopen it.'
   errorBox.classList.remove('hide')
 }
 
@@ -47,7 +57,7 @@ function writeMediaOptions () {
     .catch(err => console.error(err))
 }
 
-writeMediaOptions ()
+writeMediaOptions()
 
 navigator.mediaDevices.ondevicechange = writeMediaOptions
 
@@ -81,13 +91,30 @@ function getVideo (deviceId) {
   console.log(`Initialising Video: `, { constraints })
   navigator.mediaDevices.getUserMedia(constraints)
     .then(localMediaStream => {
+			console.log(localMediaStream.getTracks())
+			stream = localMediaStream.getTracks()[0]
       video.srcObject = localMediaStream
       video.play()
     })
-    .catch(err => handleError(err))
+    .catch(handleError)
 }
 
-var paintInterval
+function stopVideo () {
+	clearInterval(paintInterval)
+	video.stop()
+	if (stream) stream.stop()
+	video.srcObject = null
+
+	// const stream = video.srcObject;
+	// video.remove()
+  // const tracks = stream.getTracks();
+
+  // tracks.forEach(function(track) {
+  //   track.stop();
+  // });
+
+  // videoElem.srcObject = null;
+}
 
 function paintToCanvas (filter) {
   console.log(`paintInterval before: ${paintInterval}`)
@@ -104,10 +131,11 @@ function paintToCanvas (filter) {
   paintInterval = setInterval(function() {
     ctx.drawImage(video, 0, 0, width, height)
 
-    let pixels = ctx.getImageData(0, 0, width, height)
+		if (width <= 0 || height <= 0) return 
+    let pixels = ctx.getImageData(0, 0, Math.max(width, 0), Math.max(height, 0))
     let filterOutput = pixels
 
-    switch(filter) {
+		switch(filter) {
       case "color_overlay":
         filterOutput = color_overlay(pixels)
         break
@@ -255,7 +283,7 @@ function changeFilter (e) {
 // document.querySelector('.color_test').addEventListener('change', e => hexToRgb(e.target.value))
 
 
-let dev = true
+let dev = false
 if (dev) getVideo("0d8c1b8e69d25a3f89ae4a9bf8e2a26b7368388138ae9046fe2a7ac3b7671e9d")
 else getVideo(selectedVideoInput)
 
@@ -266,3 +294,6 @@ photobutton.addEventListener('click', takePhoto)
 videoList.addEventListener('click', changeVideoInput)
 filterButtons.addEventListener('click', changeFilter)
 togglehide.addEventListener('click', toggleVideoOptions)
+restartCamera.onclick = getVideo
+
+window.addEventListener('beforeunload', stopVideo)

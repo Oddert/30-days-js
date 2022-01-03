@@ -1,4 +1,8 @@
 
+:root {
+	--control-padding-center: 100px;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -17,12 +21,79 @@ h1 {
   color: tomato;
 }
 
-body > * {
-  /* outline: 1px dashed steelblue; */
+button {
+	font-size: 20px;
+	padding: 20px 20px;
+	cursor: pointer;
+	border: none;
+	border-radius: 0;
+	margin: 10px 0;
+	position: relative;
+	display: inline-block;
+	transition: .1s linear;
 }
 
-.hidden {
-  display: none;
+button:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	top: 10px;
+	left: 10px;
+	background: gray;
+	display: inline-block;
+	transition: .1s linear;
+}
+
+button:hover:before {
+	background: rebeccapurple;
+	top: 12px;
+	left: 12px;
+}
+
+button:active:before {
+	background: indigo;
+	top: 8px;
+	left: 8px;
+}
+
+.btnRed:hover:before {
+	background: #e84c3d;
+}
+.btnRed:active:before {
+	background: #c1392b;
+}
+.btnGreen:hover:before {
+	background: #2dcc70;
+}
+.btnGreen:active:before {
+	background: #27ae61;
+}
+.btnBlue:hover:before {
+	background: #3598db;
+}
+.btnBlue:active:before {
+	background: #297fb8;
+}
+
+/* body > * {
+  outline: 1px dashed steelblue;
+} */
+
+.content {
+	display: grid;
+	grid-template-columns: 1fr minmax(500px, auto) 1fr;
+	grid-template-rows: auto;
+}
+
+.strip {
+	grid-column: 1 / -1;
+	padding: 0 5px;
+}
+
+.strip a {
+	margin: 0 5px;
 }
 
 .error {
@@ -34,13 +105,30 @@ body > * {
   padding: 20px 30px;
   background: rgba(232, 76, 61, .1);
   margin: 10px;
+	text-align: center;
 }
 
 .error.hide {
   display: none;
 }
 
+.camera_restart {
+	align-self: flex-end;
+	justify-content: flex-end;
+	margin-top: 30px;
+}
 
+.filters {
+	display: flex;
+	flex-direction: column;
+	padding: 50px var(--control-padding-center) 50px 0;
+}
+
+hr {
+	align-self: stretch;
+	justify-self: stretch;
+	width: 100%;
+}
 
 .video_list-flex {
   display: flex;
@@ -75,6 +163,11 @@ body > * {
   border: none;
   border-radius: 0px 0px 10px 10px;
 }
+
+.video_list-flex .toggle_hide:before {
+	content: none;
+}
+
 .toggle_hide:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -144,4 +237,70 @@ body > * {
   transform: translateY(-50%);
   right: 20px;
   z-index: 100;
+	padding: 0;
+}
+
+.photobutton:before {
+	content: none;
+}
+
+.filter_controls {
+	padding: 50px 0 50px var(--control-padding-center);
+	display: flex;
+	flex-direction: column;
+}
+
+.color_overlay_controls .buttons {
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 50px;
+}
+
+.color_overlay_controls .buttons button {
+	margin-right: 5px;
+}
+
+.green_screen_controls {
+	display: grid;
+	grid-template-columns: auto auto 50px auto auto;
+	grid-template-rows: repeat(4, 1fr);
+	align-items: center;
+}
+
+.green_screen_controls .control_title {
+	grid-column: 1 / -1;
+}
+
+.green_screen_controls .label_min {
+	grid-column: 1;
+}
+.green_screen_controls .input_min {
+	grid-column: 2;
+}
+.green_screen_controls .label_max {
+	grid-column: 4;
+}
+.green_screen_controls .input_max {
+	grid-column: 5;
+}
+
+
+.channel_glitch_controls {
+	display: grid;
+	grid-template-columns: auto auto 50px auto auto;
+	grid-template-rows: repeat(4, 1fr);
+	align-items: center;
+}
+.channel_glitch_controls .control_title {
+	grid-column: 1 / -1;
+}
+.channel_glitch_controls label {
+	grid-column: 1;	
+}
+.channel_glitch_controls input {
+	grid-column: 2;
+}
+
+.hidden {
+  display: none;
 }
