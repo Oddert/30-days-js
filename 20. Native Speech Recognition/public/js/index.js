@@ -213,9 +213,9 @@ function write (text, fast) {
 			await writeOne(str)
 			if (queue.length) asyncWrite(queue.shift())
 		}
-		asyncWrite(queue.shift())
+		return asyncWrite(queue.shift())
 	} else {
-		writeOne(text)
+		return writeOne(text)
 	}
 	function writeOne (str) {
 		return new Promise((resolve, reject) => {
