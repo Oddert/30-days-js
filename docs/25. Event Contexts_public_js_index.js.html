@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> 25. Event Contexts/public/js/index.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">#JS30 | Robyn F H Veitch</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#activateDarkMode">activateDarkMode</a></li><li><a href="global.html#button_multi_counter">button_multi_counter</a></li><li><a href="global.html#button_once_counter">button_once_counter</a></li><li><a href="global.html#capture">capture</a></li><li><a href="global.html#closeInfoPannel">closeInfoPannel</a></li><li><a href="global.html#createButtonRipple">createButtonRipple</a></li><li><a href="global.html#createRipple">createRipple</a></li><li><a href="global.html#deactivateDarkMode">deactivateDarkMode</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#directedRipple">directedRipple</a></li><li><a href="global.html#displayEndTime">displayEndTime</a></li><li><a href="global.html#displayRemainingTime">displayRemainingTime</a></li><li><a href="global.html#documentLoaded">documentLoaded</a></li><li><a href="global.html#enqueueTimeBlock">enqueueTimeBlock</a></li><li><a href="global.html#format12hTime">format12hTime</a></li><li><a href="global.html#formatAnyTime">formatAnyTime</a></li><li><a href="global.html#formatNormalTime">formatNormalTime</a></li><li><a href="global.html#handleDOMLoaded">handleDOMLoaded</a></li><li><a href="global.html#handleEnter">handleEnter</a></li><li><a href="global.html#handleLeave">handleLeave</a></li><li><a href="global.html#handleLocationUpdate">handleLocationUpdate</a></li><li><a href="global.html#handleOOBInfoPannel">handleOOBInfoPannel</a></li><li><a href="global.html#initTimer">initTimer</a></li><li><a href="global.html#logText">logText</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#openInfoPannel">openInfoPannel</a></li><li><a href="global.html#osm">osm</a></li><li><a href="global.html#populateVoices">populateVoices</a></li><li><a href="global.html#propigate">propigate</a></li><li><a href="global.html#readBodyClass">readBodyClass</a></li><li><a href="global.html#readClientPreference">readClientPreference</a></li><li><a href="global.html#readSwitchState">readSwitchState</a></li><li><a href="global.html#readToggleSwitches">readToggleSwitches</a></li><li><a href="global.html#resetListeners">resetListeners</a></li><li><a href="global.html#setOption">setOption</a></li><li><a href="global.html#setTimer">setTimer</a></li><li><a href="global.html#setVoice">setVoice</a></li><li><a href="global.html#simulateBubble">simulateBubble</a></li><li><a href="global.html#toggle">toggle</a></li><li><a href="global.html#toggleClose">toggleClose</a></li><li><a href="global.html#toggleInfo">toggleInfo</a></li><li><a href="global.html#toggleLockout">toggleLockout</a></li><li><a href="global.html#updateLink">updateLink</a></li><li><a href="global.html#useNativeJS">useNativeJS</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>25. Event Contexts/public/js/index.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Controls wether events should capture
+ * @type {boolean}
+ * @global
+ */
+let capture = false
+/**
+ * Controls wether events should propigate
+ * @type {boolean}
+ * @global
+ */
+let propigate = true
+
+// Main user interface controls
+const button_once = document.querySelector('.button_once')
+const button_multi = document.querySelector('.button_multi')
+const capture_toggle = document.getElementById('captureControl')
+const propigate_toggle = document.getElementById('propigateControl')
+
+// Other element bindings
+const buttons = document.getElementsByClassName('rippler')
+const layers = document.querySelectorAll('.layer')
+const infoOpen = document.querySelector('.infoButton')
+const infoPannel = document.querySelector('.infoPannel')
+const infoClose = document.querySelector('.infoPannel .close button')
+
+/**
+ * Counts the number of clicks on the 'multi click' button
+ * @type {number}
+ * @global
+ */
+let button_multi_counter = 0
+/**
+ * Counts the number of clicks on the 'single click' button
+ * @type {number}
+ * @global
+ */
+let button_once_counter = 0
+
+/**
+ * If true, events will be entirely handled by JS.
+ * If false, bubbling and capturing will be simulated to slow the animations.
+ * @type {boolean}
+ * @global
+ * @constant
+ */
+let useNativeJS = false
+
+/**
+ * Logs the class of an object on click and optionally stops propigation.
+ * @param {HTMLClickEvent} e The event object from a click event listner. 
+ */
+function logText (e) {
+	console.log('logText', this.classList.value)
+	if (!propigate) e.stopPropagation()
+	createRipple(e)
+}
+
+/**
+ * Initialises the event listneres for the layers.
+ * Unbinds previous listners before assigning new ones (to prevent duplication).
+ */
+function resetListeners () {
+	// Either uses default JS functionality or simulates propigation.
+	if (useNativeJS) {
+		// We need to account for all possible values in the argument object
+		layers.forEach(each => each.removeEventListener('click', logText, {
+			capture,
+		}))
+		layers.forEach(each => each.removeEventListener('click', logText, {
+			capture: !capture,
+		}))
+
+		layers.forEach(each => each.addEventListener('click', logText, {
+			capture,
+		}))
+	} else {
+		layers.forEach(each => each.removeEventListener('click', simulateBubble, { capture }))
+		layers.forEach(each => each.removeEventListener('click', simulateBubble, { capture: !capture }))
+		layers.forEach(each => each.addEventListener('click', simulateBubble, { capture }))
+	}
+}
+
+/**
+ * Toggles the global capture variable on user input.
+ * @param {HTMLChangeEvent} e The event from the clicked target
+ */
+capture_toggle.onchange = (e) => {
+	// cature false produces "three two one" in the console (bubble up)
+	// capture true produces "one two three" on capture down
+	capture = e.target.checked
+	resetListeners()
+}
+
+/**
+ * Toggles the global propigate variable on user input.
+ * @param {HTMLChangeEvent} e The event from the click target.
+ */
+propigate_toggle.onchange = (e) => {
+	propigate = e.target.checked
+	resetListeners()
+}
+
+/**
+ * Increments the 'multi click' button.
+ */
+button_multi.addEventListener('click', () => {
+	console.log('button_multi Clicked')
+  button_multi_counter ++
+  button_multi.innerHTML = `You may click infinitely (${button_multi_counter})`
+})
+
+/**
+ * Increments the 'single click' button once then unbinds.
+ */
+button_once.addEventListener('click', () => {
+	console.log('button_once Clicked')
+  button_once_counter ++
+  button_once.innerHTML = `You may only click once (${button_once_counter})`
+}, {
+	once: true
+})
+
+/**
+ * Creates a ripple effect at a click target.
+ * Intended to be used as the callback for a click event listner.
+ * @param {HTMLChangeEvent} e The event from the click target.
+ */
+function createRipple (e) {
+	const elem = e.currentTarget
+	// Creates a bounding rect to get the target element's position.
+	const rect = elem.getBoundingClientRect()
+	// Creates a ripple span and makes it as large as the largest edge of the target.
+	const circle = document.createElement('span')
+	const diameter = Math.max(elem.clientWidth, elem.clientHeight)
+	const radius = diameter / 2
+	circle.style.width  = circle.style.height = `${diameter}px`
+	// Shifts the ripple to align it's center with the click location.
+	circle.style.left = `${e.clientX - (rect.left + radius)}px`
+	circle.style.top = `${e.clientY - (rect.top + radius)}px`
+	// Adds the ripple class which will shrink the ripple to 0 width / height and expand it outwards.
+	circle.classList.add('ripple')
+	// If there is already a ripple in progress, find the element and remove it, replacing it with the new ripple.
+	const ripple = elem.getElementsByClassName('ripple')[0]
+	if (ripple) ripple.remove()
+	elem.prepend(circle)
+}
+
+/**
+ * Creates a ripple effect at a click target.
+ * Intended to be used as the callback for a click event listner.
+ * 
+ * Same functionality as {@link createRipple} with minor changes.
+ * 
+ * @param {HTMLChangeEvent} e The event from the click target.
+ */
+function createButtonRipple (e) {
+	const elem = e.currentTarget
+	const circle = document.createElement('span')
+	const diameter = Math.max(elem.clientWidth, elem.clientHeight)
+	const radius = diameter / 2
+	circle.style.width  = circle.style.height = `${diameter}px`
+	circle.style.left = `${e.clientX - (elem.offsetLeft + radius)}px`
+	circle.style.top = `${e.clientY - (elem.offsetTop + radius)}px`
+	circle.classList.add('buttonRipple')
+	const ripple = elem.getElementsByClassName('buttonRipple')[0]
+	if (ripple) ripple.remove()
+	elem.prepend(circle)
+}
+
+/**
+ * Assigns the {@link createButtonRipple} to all elements with the .rippler class.
+ */ 
+for (const button of buttons) {
+	button.addEventListener('click', createButtonRipple)
+}
+
+/**
+ * Alternative change handler for the layers.
+ * Simulates the effect of event propigation capture and bubbling.
+ * Creates a ripple animation with a slight delay.
+ * @param {HTMLChangeEvent} e The event from the click target.
+ */
+function simulateBubble (e) {
+	console.log({ capture, propigate })
+	console.log('simulateBubble', e.target.className)
+	// Stops the native event.
+	e.stopPropagation()
+	const delay = 500
+	const offset = 0
+	// If the click is on a child of the layer (for instance the ripple or text), find the layer.
+	const layer = e.target.classList.contains('layer') ? e.target : e.target.closest('.layer')
+	// Determins the index of the layer using it's classname
+	const idxMap = {
+		'layer one': 2,
+		'layer two': 1,
+		'layer three': 0,	
+	}
+	// Create a list of all the layers, orders it (to simulate capture vs bubble).
+	// Removes any items which would not have otherwise received the event.
+	const list = capture ? [...layers] : [...layers].reverse()
+	const filteredList = list.slice(idxMap[e.target.className])
+	console.log(layer, filteredList)
+	console.log('Now watch the event propigate (or not)...')
+	// Simulates the stopPropigation feature
+	if (propigate) {
+		// Loop over each of the applicable layers and create a riplpe on delay.
+		filteredList.forEach((each, idx) => directedRipple(each, (idx * delay) + offset, e))
+	} else {
+		directedRipple(filteredList[0], 0, e)
+	}
+}
+
+/**
+ * Creates a ripple effect on a specific element.
+ * Intended to give other parts of the codebase direct control on where ripples appear (as opposed to letting event handlers invoke it).
+ * Same basic code as {@link createRipple}. See it for details on how it works.
+ * 
+ * @param {HTMLElement} elem The HTML elemnt the ripple effect is to be activated on. Does not need the .rippler class.
+ * @param {number} offset An optional delay before the ripple effect starts.
+ * @param {HTMLClickEvent} e The click event from the event listener, required to get the user's mouse position from e.clientX and e.clientY.
+ */
+function directedRipple (elem, offset = 0, e) {
+	setTimeout(() => {
+		console.log(elem.className)
+		const rect = elem.getBoundingClientRect()
+		const circle = document.createElement('span')
+		const diameter = Math.max(elem.clientWidth, elem.clientHeight)
+		const radius = diameter / 2
+
+		circle.style.width  = circle.style.height = `${diameter}px`
+		circle.style.left = `${e.clientX - (rect.left + radius)}px`
+		circle.style.top = `${e.clientY - (rect.top + radius)}px`
+		circle.classList.add('ripple')
+		const ripple = elem.getElementsByClassName('ripple')[0]
+		if (ripple) ripple.remove()
+		elem.prepend(circle)
+		// Testing code, left in for interest's sake.
+		// Produces a 'dot' with it's top left corner at the point of origin of the ripple.
+
+		// const dot = document.createElement('div')
+		// const cols = {
+		// 	'layer one': 'red',
+		// 	'layer two': 'blue',
+		// 	'layer three': 'yellow',
+		// }
+		// dot.className = 'dot'
+		// dot.style.width  = dot.style.height = `${10}px`
+		// dot.style.top = `${e.clientY - (rect.top + 0)}px`
+		// dot.style.left = `${e.clientX - (rect.left + 0)}px`
+		// dot.style.background = cols[elem.className]
+		// elem.prepend(dot)
+	}, offset)
+}
+
+/**
+ * Opens and closes the info panel.
+ * @param {boolean} overide (optional) The desired open state of the info pannel. Overrides the toggle.
+ */
+function toggleInfo (overide) {
+	const open = (typeof overide === "boolean") ? !overide : !infoPannel.classList.contains('hide')
+	if (open) {
+		infoPannel.classList.add('hide')
+	} else {
+		infoPannel.classList.remove('hide')
+	}
+}
+
+/**
+ * Opens the info panel.
+ */
+function openInfoPannel () {
+	toggleInfo(true)
+}
+/**
+ * Closes the info panel.
+ */
+function closeInfoPannel () {
+	toggleInfo(false)
+}
+/**
+ * Detects if the user has clicked outside of the info panel content and closes the panel.
+ * @param {HTMLChangeEvent} e The click event.
+ */
+function handleOOBInfoPannel (e) {
+	if (e.target.className === 'infoPannel') closeInfoPannel()
+}
+
+// Assign the open and close listeners.
+infoOpen.onclick = openInfoPannel
+infoClose.onclick = closeInfoPannel
+infoPannel.addEventListener('click', handleOOBInfoPannel)
+
+/**
+ * Some browsers persist &lt;input /> states between soft refreshes.
+ * This function checks the initial state of control elements as they cannot be assumed.
+ */
+function readToggleSwitches () {
+	propigate = propigate_toggle.checked
+	capture = capture_toggle.checked
+}
+
+/**
+ * Once the document is loaded, these post-render setup scripts will be invoked.
+ */ 
+function documentLoaded () {
+	resetListeners()
+	readToggleSwitches()
+}
+
+document.addEventListener('DOMContentLoaded', documentLoaded)
+
+
+/**
+ * Standard debouncing function. 
+ * Ensures a function cannot be clicked too rapidly.
+ * 
+ * @param {function} func The function you want to debounce
+ * @param {number} wait The delay time between accepted function calls (duration between calls)
+ * @param {boolean} immediate Bypasses the debounce method. Used to allow high-priority invocations through.
+ * @returns The debounced function
+ */
+function debounce(func, wait = 20, immediate) {
+	var timeout
+	return function() {
+		var context = this, args = arguments
+		var later = function() {
+			timeout = null
+			if (!immediate) func.apply(context, args)
+		}
+		var callNow = immediate &amp;&amp; !timeout
+		clearTimeout(timeout)
+		timeout = setTimeout(later, wait)
+		if (callNow) func.apply(context, args)
+	}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>
