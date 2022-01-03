@@ -5,9 +5,27 @@
 }
 
 body {
-	background: linear-gradient(40deg, #f0f3f7 50%, white 100%);
+	background: linear-gradient(40deg, #E5E8EC 50%, white 100%);
+	font-family:  'Josefin Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+header {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: auto auto;
+	width: 80vw;
+	/* border: 1px solid #bec3c7; */
+	padding: 20px 50px;
+	margin: 40px auto 20px;
+	border-radius: 50px;
+	box-shadow: 5px 10px 30px rgba(0,0,0,.3);
+}
+
+header h1 {
+	grid-column: 1 / -1;
+	text-align: center;
+	font-family: 'Poiret One', 'Josefin Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .project-container {
   /* display: flex;
@@ -15,8 +33,9 @@ body {
   align-items: center;
   justify-content: flex-start; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+	padding: 50px;
 }
 
 .project {
@@ -48,14 +67,16 @@ a {
 	background: #ecf0f1;
 }
 
-p {
+.project p {
 	margin-top: 30px;
 }
 
 .thumbnail {
   max-width: 100%;
-  max-height: 200px;
+  /* max-height: 200px; */
   border-radius: 3px;
+	height: 200px;
+	object-fit: contain;
 }
 
 @media only screen and (max-width: 950px) {
@@ -68,4 +89,168 @@ p {
   .project-container {
     grid-template-columns: 1fr;
   }
+}
+
+.darkmode {
+	background: linear-gradient(135deg, #232323 0%, #444444 100%);
+}
+
+.darkmode .project {
+	background: #232323;
+	border-color: #111;
+	color: #ecf0f1;
+}
+
+.darkmode .project:hover {
+	background: #262626;
+	/* border-color: #262626; */
+	color: #fff;
+}
+
+.darkmode header {
+	color: #ecf0f1;
+}
+
+
+
+
+
+
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.rocker {
+  display: inline-block;
+  position: relative;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #888;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid #eee;
+}
+
+.rocker::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #999;
+  border: 0.5em solid #eee;
+  border-bottom: 0;
+}
+
+.rocker input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-left,
+.switch-right {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+}
+
+.switch-left {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background-color: #ddd;
+  transform: rotate(15deg) skewX(15deg);
+}
+
+.switch-right {
+  right: 0.5em;
+  bottom: 0;
+  background-color: #e84c3d;
+  color: #fff;
+}
+
+.switch-left::before,
+.switch-right::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: #ccc;
+  transform: skewY(-65deg);
+}
+
+.switch-left::before {
+  left: -0.4em;
+}
+
+.switch-right::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+
+input:checked + .switch-left {
+  background-color: #297fb8;
+  color: #fff;
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+
+input:checked + .switch-left::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+
+input:checked + .switch-left + .switch-right {
+  background-color: #ddd;
+  color: #888;
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+
+input:checked + .switch-left + .switch-right::before {
+  background-color: #ccc;
+}
+
+input:focus + .switch-left {
+  color: #333;
+}
+
+input:checked:focus + .switch-left {
+  color: #fff;
+}
+
+input:focus + .switch-left + .switch-right {
+  color: #fff;
+}
+
+input:checked:focus + .switch-left + .switch-right {
+  color: #333;
 }

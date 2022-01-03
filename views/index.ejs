@@ -2,14 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Oddert 30 Days of Javascript</title>
+    <title>Oddert 30 Days of JavaScript</title>
     <link rel="stylesheet" href="/public/index.css">
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=0.666667, maximum-scale=0.6666667, user-scalable=0">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/png" href="/faveicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poiret+One&display=swap" rel="stylesheet"> 
   </head>
-  <body>
+  <body class='darkmode'>
+		<header>
+			<h1>30 Days of Javascript | Robyn F H Veitch</h1>
+			<div class='description'>
+				<p>
+					<a href='https://javascript30.com/'>The #JS30</a> (<a href='https://github.com/wesbos/JavaScript30'>repository</a>) is a multi day challenge / video course set out by <a href='https://wesbos.com/'>Wes Bos</a>
+				</p>
+				<p>
+					It comprises a series of mini-projects and exercises to look at core JavaScript features and browser API's
+				</p>
+				<p>
+					Across each of the days of November 2018 I completed one of these projects to a minimum standard and gained a great benefit to my skills early in my career.
+				</p>
+				<p>
+					As a personal addition to the rules, I decided that each challenge should be customised with a personal twist, stylistically or in terms of a unique functionality.
+				</p>
+			</div>
+			<div class='rules'>
+				Rules
+				<ol>
+					<li>No Frameworks</li>
+					<li>No Compilers</li>
+					<li>No External Library's (font's & images allowed)</li>
+					<li>Complete One challenge a day (within reason)</li>
+				</ol>
+			</div>
+		</header>
+		<label class='rocker' title='toggle dark mode'>
+			<input type='checkbox'>
+			<span class='switch-left'>🌙</span>
+			<span class='switch-right'>☀️</span>
+		</label>
     <div class="project-container">
       <% projects.forEach(each => { %>
 				<a href="/<%= each.title %>">
@@ -28,4 +62,5 @@
       <% }) %>
     </div>
   </body>
+	<script src='./public/js/index.js'></script>
 </html>
