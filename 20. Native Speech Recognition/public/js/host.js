@@ -1,6 +1,8 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+console.log(window.SpeechRecognition, window.webkitSpeechRecognition)
 
-const recognition = new SpeechRecognition()
+// const recognition = window.SpeechRecognition || window.webkitSpeechRecognition ? new SpeechRecognition() : null
+if (!recognition) write('testing', true)
 recognition.interimResults = true
 
 const hat = document.querySelector('.hat-orb')
@@ -14,7 +16,7 @@ recognition.addEventListener('speechstart', () => hat.classList.add('lightup'))
 
 function debounce (func, wait=0, immediate=true) {
   console.log('debouncing')
-  var timeout;
+  var timeout
   return function () {
     var context = this, args = arguments
     var later = function () {

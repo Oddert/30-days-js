@@ -1,16 +1,40 @@
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-
-const recognition = new SpeechRecognition()
-recognition.interimResults = true
-
+// const PATH_PREFIX = '/20. Native Speech Recognition/public/img/'
+const PATH_PREFIX = './public/img/'
 const hat = document.querySelector('.hat-orb')
+
+const leftEye = document.querySelector('.eye.left')
+const rightEye = document.querySelector('.eye.right')
+const mouth = document.querySelector('.mouth')
+
+let canBlink = true
+let canWrite = true
+let talking = false
+
+let animateDebounceActive = false
+
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+console.log(window.SpeechRecognition, window.webkitSpeechRecognition)
+
+const recognition = window.SpeechRecognition ? new SpeechRecognition() : null
+if (recognition) {
+	recognition.interimResults = true
+} else {
+	// write('Uh oh. It looks like there was an issue accessing SpeechRecognition on your bowser :( Check your permissions and if that doesn\'t work, maybe try another browser. If you are using Firefox there is a good chance it does not have a native Speech Regionition at the moment.', true)
+	write([
+		'Uh oh. It looks like there was an issue accessing SpeechRecognition on your bowser :(',
+		'Check your permissions, and if that doesn\'t work, maybe try another browser.',
+		'If you are using Firefox there is a good chance it does not have a native Speech Regionition at the moment.',
+	], true)
+}
 
 let p = document.createElement('P')
 p.classList.add('text_line')
 const words = document.querySelector('.words')
 words.appendChild(p)
 
-recognition.addEventListener('speechstart', () => hat.classList.add('lightup'))
+if (recognition) {
+	recognition.addEventListener('speechstart', () => hat.classList.add('lightup'))
+}
 
 function debounce (func, wait=0, immediate=true) {
   console.log('debouncing')
@@ -28,44 +52,46 @@ function debounce (func, wait=0, immediate=true) {
   }
 }
 
-recognition.addEventListener('result', e => {
-  console.log(e)
-  const transcript = Array.from(e.results)
-    .map(res => res[0])
-    .map(res => res.transcript)
-    .join('')
-
-  if (transcript.includes('love you')) love()
-  if (transcript.includes('weather')) getWeather()
-  if (transcript.includes('download')) voiceDownload()
-  if (
-    transcript.includes('good bot') ||
-    transcript.includes('well done') ||
-    transcript.includes('I like you') ||
-    transcript.includes('I like this') ||
-    transcript.includes('so good') ||
-    transcript.includes('clever bot')
-  ) thanks()
-  if (
-    transcript.includes('good job') ||
-    transcript.includes('nice') ||
-    transcript.includes('thanks') ||
-    transcript.includes('thank you')
-  ) welcome()
-
-  p.textContent = transcript
-  if (e.results[0].isFinal) {
-    hat.classList.remove('lightup')
-    p = document.createElement('P')
-    p.classList.add('text_line')
-    words.appendChild(p)
-  }
-  console.log(transcript)
-})
-
-recognition.addEventListener('end', recognition.start)
-
-recognition.start()
+if (recognition) {
+	recognition.addEventListener('result', e => {
+		console.log(e)
+		const transcript = Array.from(e.results)
+			.map(res => res[0])
+			.map(res => res.transcript)
+			.join('')
+	
+		if (transcript.includes('love you')) love()
+		if (transcript.includes('weather')) getWeather()
+		if (transcript.includes('download')) voiceDownload()
+		if (
+			transcript.includes('good bot') ||
+			transcript.includes('well done') ||
+			transcript.includes('I like you') ||
+			transcript.includes('I like this') ||
+			transcript.includes('so good') ||
+			transcript.includes('clever bot')
+		) thanks()
+		if (
+			transcript.includes('good job') ||
+			transcript.includes('nice') ||
+			transcript.includes('thanks') ||
+			transcript.includes('thank you')
+		) welcome()
+	
+		p.textContent = transcript
+		if (e.results[0].isFinal) {
+			hat.classList.remove('lightup')
+			p = document.createElement('P')
+			p.classList.add('text_line')
+			words.appendChild(p)
+		}
+		console.log(transcript)
+	})
+	
+	recognition.addEventListener('end', recognition.start)
+	
+	recognition.start()
+}
 
 function download (filename, text) {
   let elem = document.createElement('a')
@@ -94,27 +120,16 @@ document.querySelector('.download')
 
 // ========== Robot Animation Functionality ==========
 
-const leftEye = document.querySelector('.eye.left')
-const rightEye = document.querySelector('.eye.right')
-const mouth = document.querySelector('.mouth')
-
-let canBlink = true
-let canWrite = true
-let talking = false
-
-let animateDebounceActive = false
-
-
 function blink () {
-  leftEye.setAttribute('src', '/img/eye closed.png')
-  rightEye.setAttribute('src', '/img/eye closed.png')
+  leftEye.setAttribute('src', PATH_PREFIX + '/eye closed.png')
+  rightEye.setAttribute('src', PATH_PREFIX + '/eye closed.png')
   setTimeout(() => {
-    leftEye.setAttribute('src', '/img/eye default.png')
-    rightEye.setAttribute('src', '/img/eye default.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
   }, 300)
 }
 
-async function randomBlink () {
+function randomBlink () {
   setTimeout (() => {
     if (canBlink && !talking) Math.floor(Math.random()*5) === 1 ? blink() : wink()
     randomBlink()
@@ -125,21 +140,21 @@ setTimeout(randomBlink, 2000)
 
 function toggleSurprise (surpriseState) {
   if (surpriseState) {
-    leftEye.setAttribute('src', '/img/eye surprise left.png')
-    rightEye.setAttribute('src', '/img/eye surprise right.png')
-    mouth.setAttribute('src', '/img/eye default.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye surprise left.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye surprise right.png')
+    mouth.setAttribute('src', PATH_PREFIX + '/eye default.png')
     mouth.style.height = '25px'
     mouth.style.width = '25px'
   } else {
-    leftEye.setAttribute('src', '/img/eye default.png')
-    rightEye.setAttribute('src', '/img/eye default.png')
-    mouth.setAttribute('src', '/img/mouth default.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    mouth.setAttribute('src', PATH_PREFIX + '/mouth default.png')
     mouth.style.height = null
     mouth.style.width = null
   }
 }
 
-async function surprise () {
+function surprise () {
   canBlink = false
   toggleSurprise(true)
   setTimeout(() => {
@@ -151,17 +166,17 @@ async function surprise () {
 
 function toggleWink (winkState) {
   if (winkState) {
-    leftEye.setAttribute('src', '/img/eye closed.png')
-    rightEye.setAttribute('src', '/img/eye default.png')
-    mouth.setAttribute('src', '/img/mouth smirk.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye closed.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    mouth.setAttribute('src', PATH_PREFIX + '/mouth smirk.png')
   } else {
-    leftEye.setAttribute('src', '/img/eye default.png')
-    rightEye.setAttribute('src', '/img/eye default.png')
-    mouth.setAttribute('src', '/img/mouth default.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    mouth.setAttribute('src', PATH_PREFIX + '/mouth default.png')
   }
 }
-
-async function wink () {
+ 
+function wink () {
   canBlink = false
   toggleWink(true)
   setTimeout (() => {
@@ -176,13 +191,13 @@ async function wink () {
 function toggleTalking (talkState) {
   if (talkState) {
     canBlink = false
-    mouth.setAttribute('src', '/img/eye default.png')
+    mouth.setAttribute('src', PATH_PREFIX + '/eye default.png')
     mouth.style.height = '25px'
     mouth.style.width = '25px'
     hat.classList.add('talking')
     talking = true
   } else {
-    mouth.setAttribute('src', '/img/mouth default.png')
+    mouth.setAttribute('src', PATH_PREFIX + '/mouth default.png')
     mouth.style.height = null
     mouth.style.width = null
     hat.classList.remove('talking')
@@ -191,29 +206,46 @@ function toggleTalking (talkState) {
   }
 }
 
-async function write (text, fast) {
-  toggleTalking(true)
-  const dialogue = document.querySelector('.dialogue')
-  const elem = document.createElement('P')
-  dialogue.appendChild(elem)
-  let i = 0
-  function output () {
-    elem.textContent = text.substring(0,i)
-    i ++
-    if (i <= text.length) setTimeout(output, Math.floor(Math.random()*(fast ? 20 : 150)))
-    else toggleTalking(false)
-  }
-  output()
+function write (text, fast) {
+	if (Array.isArray(text)) {
+		const queue = [...text]
+		async function asyncWrite (str) {
+			await writeOne(str)
+			if (queue.length) asyncWrite(queue.shift())
+		}
+		asyncWrite(queue.shift())
+	} else {
+		writeOne(text)
+	}
+	function writeOne (str) {
+		return new Promise((resolve, reject) => {
+			toggleTalking(true)
+			const dialogue = document.querySelector('.dialogue')
+			const elem = document.createElement('P')
+			dialogue.appendChild(elem)
+			let i = 0
+			function output () {
+				elem.textContent = str.substring(0,i)
+				i ++
+				if (i <= str.length) setTimeout(output, Math.floor(Math.random()*(fast ? 20 : 150)))
+				else {
+					toggleTalking(false)
+					resolve()
+				}
+			}
+			output()
+		})
+	}
 }
 
 
 function heart (heartState) {
   if (heartState) {
-    leftEye.setAttribute('src', '/img/eye heart.png')
-    rightEye.setAttribute('src', '/img/eye heart.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye heart.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye heart.png')
   } else {
-    leftEye.setAttribute('src', '/img/eye default.png')
-    rightEye.setAttribute('src', '/img/eye default.png')
+    leftEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+    rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
   }
 }
 
@@ -235,9 +267,9 @@ function thanks () {
     heart(true)
     write ("Thank you for your kindness!", true)
     setTimeout(() => {
-      leftEye.setAttribute('src', '/img/eye default.png')
-      rightEye.setAttribute('src', '/img/eye default.png')
-      mouth.setAttribute('src', '/img/mouth default.png')
+      leftEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+      rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+      mouth.setAttribute('src', PATH_PREFIX + '/mouth default.png')
       animateDebounceActive = false
     }, 3600)
   }
@@ -249,9 +281,9 @@ function welcome () {
     heart(true)
     write ("You're very welcome! Any time", true)
     setTimeout(() => {
-      leftEye.setAttribute('src', '/img/eye default.png')
-      rightEye.setAttribute('src', '/img/eye default.png')
-      mouth.setAttribute('src', '/img/mouth default.png')
+      leftEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+      rightEye.setAttribute('src', PATH_PREFIX + '/eye default.png')
+      mouth.setAttribute('src', PATH_PREFIX + '/mouth default.png')
       animateDebounceActive = false
     }, 3600)
   }
@@ -305,13 +337,25 @@ function voiceDownload () {
 // write("Here is a test message for odd bot to output")
 // setTimeout(() => write("and here is another string after "), 2000)
 // setTimeout(() => write("and here is another string after we need a really long sentance to properly test how the animations override. Do you think there is an easier wya to do this? Maybe I should go backto using some lorem ipsum text. Feasably none of the genreated content will ever be longer than this..."), 15000)
-write("Hello! I'm OddBot, the @Oddert robot. I'll write down your speech for you to download!", true)
-navigator.webkitGetUserMedia({ audio: true }
-    , () => {console.log('User has allowed microphone')}
-    , () => {
-      console.log('User has disabled microphone')
-      write("Uh oh! You need to enable a microphone for this to work, am no psychic...")
-    })
+
+if (recognition) {
+	write("Hello! I'm OddBot, the @Oddert robot. I'll write down your speech for you to download!", true)
+}
+// navigator.webkitGetUserMedia(
+// 	{ audio: true },
+//   () => console.log('User has allowed microphone'),
+//   () => {
+// 		console.log('User has disabled microphone')
+// 		write("Uh oh! You need to enable a microphone for this to work, am no psychic...")
+// 	},
+// )
+
+navigator.mediaDevices.getUserMedia({ audio: true })
+		.then(() => console.log('User has allowed microphone'))
+		.catch(() => {
+			console.log('User has disabled microphone')
+			write("Uh oh! You need to enable a microphone for this to work, am no psychic...")
+		})
 
 setTimeout(() => {
   write("")

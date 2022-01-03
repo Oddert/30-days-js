@@ -5,52 +5,68 @@
     <title>Oddert 30 Days of Javascript | Day #20 Native Speech Recognition</title>
     <link rel="stylesheet" href="/20. Native Speech Recognition/public/css/index.css">
     <link rel="icon" type="image/png" href="/faveicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <!-- <h1>Hello World</h1> -->
-    <div class="avatar">
-      <div class="hat">
-        <div class="hat-orb"></div>
-      </div>
+		<div class='header'>
+			<div class="oddBot">
+				<div class="hat">
+					<div class="hat-orb"></div>
+				</div>
+	
+				<div class="head-cont">
+					<div class="ear-cont">
+						<div class="ear left">
+							<div class="innerEar">
+	
+							</div>
+						</div>
+					</div>
+					<div class="head">
+						<div class="eyes">
+							<img src="./public/img/eye default.png" alt="robot eye" class="eye left">
+							<img src="./public/img/eye default.png" alt="robot eye" class="eye right">
+						</div>
+						<div class="mouth-cont">
+							<img src="./public/img/mouth default.png" alt="robot mouth" class="mouth">
+						</div>
+					</div>
+					<div class="ear-cont">
+						<div class="ear right">
+							<div class="innerEar">
+	
+							</div>
+						</div>
+					</div>
+				</div>
+	
+			</div>
+	
+			<div class="dialogue-wrapper">
+				<svg class='speechBubble' height="50" viewBox="0 0 339 738" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M338 736.5C211.202 617.089 -114.5 407.5 43.5001 431C201.5 454.5 251.778 350.038 338 1V736.5Z" fill="#BEC3C7" stroke="#BEC3C7"/>
+				</svg>					
+				<div class="dialogue"></div>
+			</div>
 
-      <div class="head-cont">
-        <div class="ear-cont">
-          <div class="ear left">
-            <div class="innerEar">
+		</div>
+		<p class='signature'>-OddBot <em>the <a href='https://github.io/Oddert'>@Oddert</a> robot</em></p>
 
-            </div>
-          </div>
-        </div>
-        <div class="head">
-          <div class="eyes">
-            <img src="./public/img/eye default.png" alt="robot eye" class="eye left">
-            <img src="./public/img/eye default.png" alt="robot eye" class="eye right">
-          </div>
-          <div class="mouth-cont">
-            <img src="./public/img/mouth default.png" alt="robot mouth" class="mouth">
-          </div>
-        </div>
-        <div class="ear-cont">
-          <div class="ear right">
-            <div class="innerEar">
+		<hr />
 
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="dialogue">
-
-    </div>
-    <button class="download">Download Text</button>
-
-    <hr />
-
-    <div class="words">
-
-    </div>
+		<div class="output">
+			<button class="download">Download Text</button>
+	
+			<div class="words">
+				<svg class='speechBubble' height="50" viewBox="0 0 339 738" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.00003 736.5C127.798 617.089 453.5 407.5 295.5 431C137.5 454.5 87.222 350.038 1.00003 1V736.5Z" fill="#01E5FF" stroke="#01E5FF"/>
+				</svg>					
+			</div>
+		</div>
+    
   </body>
   <script type="text/javascript" src='/20. Native Speech Recognition/public/js/index.js'></script>
 </html>
