@@ -30,7 +30,7 @@ let projects = [
   , { title: '16. CSS Mouse Move', workToDo: false, thumbnail: '16. CSS Mouse Move.PNG' }
   , { title: '17. Sort without Articles', workToDo: false, thumbnail: '17. Sort Without Articles.PNG' }
   , { title: '18. Tally Video Lengths', workToDo: false, thumbnail: '18. Tally Video Lengths.png' }
-  , { title: '19. Webcam Booth', workToDo: true, thumbnail: 'help.PNG' }
+  , { title: '19. Webcam Booth', workToDo: false, thumbnail: 'help.PNG' }
   , { title: '20. Native Speech Recognition', workToDo: true, thumbnail: '20. Native Voice Recognition.PNG' }
   , { title: '21. Geolocation', workToDo: false, thumbnail: '21. Geolocation.png' }
   , { title: '22. Link Transition Effect', workToDo: false, thumbnail: '22. Link Transition Effect 2.PNG' }

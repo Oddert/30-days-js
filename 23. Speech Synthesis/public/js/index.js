@@ -57,3 +57,5 @@ speakButton.addEventListener('click', toggle)
 stopButton.addEventListener('click', () => toggle(false))
 
 document.addEventListener('DOMContentLoaded', populateVoices)
+
+// TODO: Select menu persists state, either reset or read state
