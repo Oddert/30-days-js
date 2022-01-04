@@ -1,4 +1,10 @@
 
+:root {
+	--blue-light: #00B0FF;
+	--blue-normal: #3181FF;
+	--blue-dark: #3D5AFE;
+	--blue-darker: #2B48EC;
+}
 
 * {
   font-family: sans-serif, arial, helvetica, 'open sans';
@@ -25,6 +31,19 @@ header h1 {
 	grid-column: 1 / -1;
 	text-align: center;
 	font-family: 'Poiret One', 'Josefin Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+	color: #3181FF;
+}
+a:visited {
+	color: #7C4DFF;
+}
+a:hover {
+	color: #00B0FF;
+}
+a:active {
+	color: #2B48EC;
 }
 
 .project-container {
