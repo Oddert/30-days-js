@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Oddert 30 Days of Javascript | Day #26 Stripe Dropdown Nav</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/26. Stripe Dropdown Example/public/css/index.css">
+    <link rel="icon" type="image/png" href="/faveicon.png">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
   <body>
-    <h1>nav</h1>
+    <!-- <h1>nav</h1> -->
     <nav class='top'>
       <div class="dropdownBackground">
         <span class='arrow'></span>
@@ -14,11 +16,19 @@
 
       <ul class='cool'>
         <li>
-          <a href="#">About Me</a>
+          <a href="https://robynveitch.com/">About Me</a>
           <div class="dropdown dropdown1">
             <div class="bio">
               <img src="https://avatars2.githubusercontent.com/u/23362989?s=460&v=4" alt="the real oddert" />
-              <p>Ye boi if it isnt time for some Lorem ipsum dolor sit amet, consectetur adipisicing mollit anim id est laborum.</p>
+              <!-- <p>Ye boi if it isnt time for some Lorem ipsum dolor sit amet, consectetur adipisicing mollit anim id est laborum.</p> -->
+							<div>
+								<p>
+									I'm a designer and developer specialising in the application of social and systems design.
+								</p>
+								<p>
+									I come from a background in industrial design and have worked in development and code for over four years. I take a research-first approach to my work with the core ethos of adding genuine value to the world and improving people's lives.
+								</p>
+							</div>
             </div>
           </div>
         </li>
@@ -26,35 +36,85 @@
           <a href="#">Courses</a>
           <ul class='dropdown courses'>
             <li>
-              <span>Something</span>
-              <a href="#">Something more</a>
+							<p>
+								<span>JS Challenge |</span>
+								<a href="https://javascript30.com/">Complete the #JavaScript30 from Wes Bos</a>
+							</p>
             </li>
             <li>
-              <span>Something</span>
-              <a href="#">Something more</a>
+							<p>
+								<span>Self Care |</span>
+								<a href="https://en.wikipedia.org/wiki/Almond">Read about almonds on wikipedia</a>
+							</p>
             </li>
             <li>
-              <span>Something</span>
-              <a href="#">Something more</a>
+							<p>
+								<span>Mind Blown |</span>
+								<a href="https://www.youtube.com/c/TraversyMedia/videos">Courses by Traversy Media</a>
+							</p>
             </li>
             <li>
-              <span>Something</span>
-              <a href="#">Something more</a>
+							<p>
+								<span>Climate Change |</span>
+								<a href="https://www.youtube.com/watch?v=FJJEeolcZaA&t=3265s">Find out why HS2 must be built in full</a>
+							</p>
             </li>
           </ul>
         </li>
         <li>
           <a href="#">Other Stuff</a>
-          <ul class='dropdown dropdown3'>
-            <li> <a href="#">Twitter (hellsite)</a> </li>
-            <li> <a href="#">Facebook (sell ur dna)</a> </li>
-            <li> <a href="#">Blog (wholesome)</a> </li>
-            <li> <a href="#">Catalogue (??)</a> </li>
-          </ul>
+          <div class='dropdown dropdown3'>
+            <ul class='primaryLinks'>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class="fa fa-user"></i>
+									About Me
+								</a>
+							</li>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class="fa fa-drafting-compass"></i>
+									Client Work
+								</a>
+							</li>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class="fa fa-shapes"></i>
+									Portfolio
+								</a>
+							</li>
+						</ul>
+            <ul class='blogList'>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class="fa fa-newspaper"></i>
+									From the Blog
+								</a>
+							</li>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class='fa fa-chevron-right'></i>
+									How I accidently became a freelancer
+								</a>
+							</li>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class='fa fa-chevron-right'></i>
+									Biased randomisers in JavaScript
+								</a>
+							</li>
+							<li>
+								<a href="https://robynveitch.com/">
+									<i class='fa fa-chevron-right'></i>
+									Did I mention we have to build HS2  in full?
+								</a>
+							</li>
+						</ul>
+          </div>
         </li>
       </ul>
 
     </nav>
   </body>
-  <script type="text/javascript" src='/js/index.js'></script>
+  <script type="text/javascript" src='/26. Stripe Dropdown Example/public/js/index.js'></script>
 </html>

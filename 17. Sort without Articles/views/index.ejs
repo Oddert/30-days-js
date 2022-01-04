@@ -3,29 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>Oddert 30 Days of Javascript | Day #17 Sort Names without Articles</title>
-    <!-- This is index.ejs not for use on the root app.js  -->
-    <link rel="stylesheet" href="/css/index.css">
+    <!-- This is host.ejs for use on the root app.js -->
+    <link rel="stylesheet" href="/17. Sort without Articles/public/css/index.css">
+    <link rel="icon" type="image/png" href="/faveicon.png">
   </head>
   <body>
     <div class="container">
       <h1>Remove Articles and Sort Alphabetically</h1>
       <div class="flex">
         <div class="input">
+					<h3>Sorted including articles</h3>
           <ul class="input-list">
-
-          </ul>
+						
+					</ul>
         </div>
         <div class="articles">
-          <h3>Articles For Removal</h3>
+					<h3>Articles For Omission</h3>
           <p>"a"</p>
           <p>"the"</p>
           <p>"an"</p>
           <p>
-            <strong>/^(a |the |an )/i</strong>
+						<strong>/^(a |the |an )/i</strong>
           </p>
           <p class="arrow">➟</p>
         </div>
         <div class="bands">
+					<h3>Sorted excluding articles</h3>
           <ul class="bands-list">
 
           </ul>
@@ -33,5 +36,5 @@
       </div>
     </div>
   </body>
-  <script type="text/javascript" src='/js/index.js'></script>
+  <script type="text/javascript" src='/17. Sort without Articles/public/js/index.js'></script>
 </html>

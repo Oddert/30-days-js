@@ -93,6 +93,14 @@ button.solid:active, a.solid:active {
 	padding: 10px 20px;
 }
 
+.intro p {
+	color: #131b25;
+}
+
+.intro h1 {
+	color: var(--white-normal);
+}
+
 .intro .closeButton i.openIcon {
 	display: none;
 }

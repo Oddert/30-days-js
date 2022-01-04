@@ -116,7 +116,7 @@ slider.addEventListener('mousemove', e => {
   e.preventDefault()
   const x = e.pageX - slider.offsetLeft
   const walk = (x - startX) * 2
-	console.log(x, startX, walk)
+	// console.log(x, startX, walk)
   slider.scrollLeft = scrollLeft - walk
 	// console.log('mouseDown', mouseIsDown, startX, scrollLeft)
 })

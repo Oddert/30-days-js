@@ -27,6 +27,12 @@ const thumbs = [
   '/18. Tally Video Lengths/public/img/network.jpg',
   '/18. Tally Video Lengths/public/img/street.jpg',
   '/18. Tally Video Lengths/public/img/temple.jpg',
+  '/18. Tally Video Lengths/public/img/zoom.png',
+  '/18. Tally Video Lengths/public/img/tube.jpg',
+  '/18. Tally Video Lengths/public/img/nebula.jpg',
+  '/18. Tally Video Lengths/public/img/city.jpg',
+  '/18. Tally Video Lengths/public/img/blue.jpg',
+  '/18. Tally Video Lengths/public/img/borg.jpg',
 ]
 
 const addTrailingZeros = n => n < 10 ? `0${n}` : `${n}`

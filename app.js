@@ -62,7 +62,7 @@ app.get('/', (req, res) =>
 app.get('/*', (req, res) =>
 	res.render(path.join(
     __dirname,
-    `./${req.params['0']}/views/host.ejs`,
+    `./${req.params['0']}/views/index.ejs`,
   ))
 )
 

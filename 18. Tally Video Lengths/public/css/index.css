@@ -153,6 +153,9 @@ code {
 	font-size: 30px;
 	font-weight: 500;
 	color: #1D2E40;
+	border: 2px solid #1D2E40;
+	border-radius: 10px;
+	padding: 20px 40px;
 }
 
 .output .output__data {

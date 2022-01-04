@@ -3,20 +3,100 @@
   <head>
     <meta charset="utf-8">
     <title>Oddert 30 Days of Javascript | Day #25 Event Contexts</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/25. Event Contexts/public/css/index.css">
+    <link rel="icon" type="image/png" href="/faveicon.png">
   </head>
   <body>
-    <button class='button_multi' title="this is a standard button event listener tracking clicks">You may click infinately (0)</button>
-    <button class='button_once' title="this buttons' event listener uses the 'once' flag to unbind the listener after one click">You may only click once (0)</button>
-    <div class="one">
-			one
-      <div class="two">
-				two
-        <div class="three">
-					three	
+		<div class='controls'>
+			<button 
+				class='button_multi rippler' 
+				title='this is a standard button event listener tracking clicks'
+			>
+				You may click infinitely (0)
+			</button>
+			<button
+				class='button_once rippler'
+				title="this buttons' event listener uses the 'once' flag to unbind the listener after one click"
+			>
+				You may only click once (0)
+			</button>
+			<div class='toggle'>
+				<label class='switch'>
+					<input type='checkbox' id='captureControl'>
+					<span class='slider round'></span>
+				</label>
+				<label for='captureControl'>
+					Capture
+				</label>
+			</div>
+			<div class='toggle'>
+				<label class='switch'>
+					<input type='checkbox' id='propigateControl' checked>
+					<span class='slider round'></span>
+				</label>
+				<label for='propigateControl'>
+					Propigate
+				</label>
+			</div>
+			<!-- <button class='captureToggle rippler'>Capture: false</button>
+			<button class='propigateToggle rippler'>Propigate: true</button> -->
+			<!-- <button class='rippler'>Button</button> -->
+		</div>
+		<p class='layer__label'>
+			body
+		</p>
+    <div class='layer one'>
+			<p class='layer__label'>
+				one
+			</p>
+      <div class='layer two'>
+				<p class='layer__label'>
+					two
+				</p>
+        <div class='layer three'>
+					<p class='layer__label'>
+						three
+					</p>
         </div>
       </div>
     </div>
+		<button class='infoButton rippler'>
+			🛈 about
+		</button>
+		<div class='infoPannel hide'>
+			<article>
+				<div class="close">
+					<button class='rippler'>✖</button>
+				</div>
+				<div class='infoPannel__text'>
+					<h1>Day 25. Event Contexts</h1>
+					<p class='infoPannel__text--intro'>
+						This challenge demonstrates various features relating to how event listeners in JavaScript work. It looks at the concepts of Event Capture, Propagation, Bubbling and the Once option.
+					</p>
+					<p class='infoPannel__text--intro'>
+						Because this is a very console-heavy demonstration, visual animations were added to show what's going on under the hood. The animations were still very fast so a simulated effect was added in order to slow the execution's of the events. To use the "real" feature in the code set <code>useNativeJS</code> to <code>true</code>.
+					</p>
+					<h2>
+						Controls
+					</h2>
+					<p>
+						The button "You may click infinitely" is a regular counter button. On click it increments a variable by 1 and displays it.
+					</p>
+					<p>
+						The button "You may only click once" demonstrates the 'once' option on an event listener. It will remove the listener after one click. Useful for when you want to make absolute sure a button isn't accidently double clicked such as on shop checkouts.
+					</p>
+					<p>
+						If the capture option is set to true, the events will be registered as the event propagates down. If disabled, the default behavior will be used and the events will be registered as the bubbles back up.
+					</p>
+					<p>
+						Lastly, the propagate toggle controls whether or not events will propagate or be  stopped with <code>event.stopPropagation()</code>.
+					</p>
+					<p>
+						Read more about the capture target and bubble phases of event propagation here: <a href='https://javascript.info/bubbling-and-capturing'>https://javascript.info/bubbling-and-capturing</a>.
+					</p>
+				</div>
+			</article>
+		</div>
   </body>
-  <script type="text/javascript" src='/js/index.js'></script>
+  <script type="text/javascript" src='/25. Event Contexts/public/js/index.js'></script>
 </html>
